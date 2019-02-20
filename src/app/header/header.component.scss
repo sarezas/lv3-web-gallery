@@ -14,6 +14,33 @@ $s-mobile: 320px;
     
     .navbar-text {
 
+        #introSocial {
+          .hidden {
+            display: none;
+          }
+        }
+
+        #introSocial {
+          color: rgb(82, 120, 144);
+          position: relative;
+
+          &:hover {
+              color: $btn-color !important;
+              transition: 100ms;
+
+              .hidden {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 100%;
+                left: -7px;
+                right: -7px;
+                padding: 15px;
+                z-index: 2;
+              }
+          }
+        }
+
         #introTextContacts {
             color: rgb(82, 120, 144);
             position: relative;
@@ -80,4 +107,4 @@ $s-mobile: 320px;
             // }
           }
     }
-}
+  }
