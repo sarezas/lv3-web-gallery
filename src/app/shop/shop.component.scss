@@ -1,0 +1,165 @@
+#shop-wrapper {
+
+    #menu {
+
+        .menu-item {
+            display: flex;
+            justify-content: center;
+            border: 1px solid black;
+            border-radius: 5px;
+            overflow: auto;
+            white-space: nowrap;
+            font-family: 'Cabin Sketch', cursive;
+    
+            p {
+                margin: 10px 10px;
+                padding: 10px 10px;
+            }
+        }
+
+        #pillows {
+            background: rgb(189, 109, 255);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                #f846bd 50%,
+                #ce2997);
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #pillows:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+        #cart {
+            background: rgb(32, 99, 161);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                rgb(247, 60, 69) 50%,
+                rgb(216, 33, 42));
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #cart:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+        #search {
+            background: rgb(61, 59, 187);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                rgb(247, 125, 89) 50%,
+                rgb(231, 96, 54));
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #search:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+        #puffs {
+            background: rgb(82, 211, 189);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                rgb(231, 148, 54) 50%,
+                rgb(231, 96, 54));
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #puffs:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+        #tents {
+            background: rgb(52, 219, 80);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                rgb(248, 201, 70) 50%,
+                rgb(221, 171, 34));
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #tents:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+        #baby-ex {
+            background: rgb(240, 237, 68);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                rgb(255, 4, 4) 50%,
+                rgb(185, 38, 38));
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #baby-ex:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+        #matts {
+            background: rgb(255, 88, 37);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                rgb(73, 243, 255) 50%,
+                rgb(42, 190, 201));
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #matts:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+        #toy-boxes {
+            background: rgb(216, 0, 0);
+            color:black;
+            background-image: linear-gradient(to left,
+                transparent,
+                transparent 50%,
+                rgb(75, 204, 75) 50%,
+                rgb(61, 201, 42));
+            background-position: 100% 0;
+                background-size: 200% 100%;
+                transition: all .25s ease-in;
+                
+            }
+        #toy-boxes:hover {
+            background-position: 0 0;
+            color: white;
+        }
+
+    }
+}

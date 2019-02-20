@@ -1,0 +1,36 @@
+.navbar {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.navbar .nav-item #introTextContacts {
+  position: relative;
+}
+
+.navbar .nav-item #introTextContacts:hover:before {
+  content: attr(data-hover);
+  display: block;
+  border-radius: 5px;
+  background: transparent;
+  position: absolute;
+  top: 100%;
+  left: -7px;
+  right: -7px;
+  padding: 15px;
+}
+
+.navbar .nav-item #introTextContacts:hover:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px transparent;
+  border-bottom-color: transparent;
+  bottom: 0;
+  left: 50%;
+  margin-left: -10px;
+  z-index: 2;
+}
+/*# sourceMappingURL=header.component.css.map */

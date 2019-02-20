@@ -1,0 +1,83 @@
+$btn-color: rgb(49, 174, 212);
+$s-mobile: 320px;
+
+@mixin s-mobile {
+    @media (min-width: #{s-mobile}) {
+        @content;
+    }
+}
+
+.navbar {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.5rem;
+    // text-transform: uppercase;
+    
+    .navbar-text {
+
+        #introTextContacts {
+            color: rgb(82, 120, 144);
+            position: relative;
+
+            &:hover {
+                color: $btn-color !important;
+                transition: 100ms;
+            }
+
+            &:hover {
+              &:before {
+                content: attr(data-text);
+                display: block;
+                border-radius: 5px;
+                background: transparent;
+                position: absolute;
+                top: 100%;
+                left: -7px;
+                right: -7px;
+                padding: 15px; 
+              }
+              &:after {
+                content: attr(data-title);
+                font-size: 1rem;
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+                top: 4rem;
+                bottom: 0;
+                left: 14%;
+                margin-left: -10px;
+                z-index: 2;
+              }
+            }
+            
+            // @include s-mobile {
+            //     &:hover {
+            //         &:before {
+            //           content: attr(data-text);
+            //           display: block;
+            //           border-radius: 5px;
+            //           background: transparent;
+            //           position: absolute;
+            //           top: 10%;
+            //           left: 0px;
+            //           right: 0px;
+            //           padding: 0px; 
+            //         }
+            //         &:after {
+            //           content: attr(data-title);
+            //           font-size: 1rem;
+            //           position: absolute;
+            //           display: block;
+            //           width: 0;
+            //           height: 0;
+            //           top: 0rem;
+            //           bottom: 0;
+            //           right: 14%;
+            //           margin-left: 10px;
+            //           z-index: 2;
+            //         }
+            //     }
+            // }
+          }
+    }
+}
