@@ -1,17 +1,17 @@
 #shop-wrapper {
+    font-family: 'Cabin Sketch', cursive;
 
     #menu {
 
         .menu-item {
             display: flex;
             justify-content: center;
-            border: 1px solid black;
+            border: 2px solid rgb(206, 194, 141);
             border-radius: 5px;
             overflow: auto;
             white-space: nowrap;
-            font-family: 'Cabin Sketch', cursive;
     
-            p {
+            p, #searchBtn {
                 margin: 10px 10px;
                 padding: 10px 10px;
             }
@@ -19,7 +19,7 @@
 
         #pillows {
             background: rgb(189, 109, 255);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
@@ -32,12 +32,13 @@
             }
         #pillows:hover {
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
         #cart {
             background: rgb(32, 99, 161);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
@@ -50,12 +51,13 @@
             }
         #cart:hover {
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
-        #search {
+        #new-arrivals {
             background: rgb(61, 59, 187);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
@@ -66,14 +68,16 @@
                 transition: all .25s ease-in;
                 
             }
-        #search:hover {
+        #new-arrivals:hover {
+            content: attr(data-hover);
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
         #puffs {
             background: rgb(82, 211, 189);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
@@ -86,17 +90,18 @@
             }
         #puffs:hover {
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
         #tents {
             background: rgb(52, 219, 80);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
-                rgb(248, 201, 70) 50%,
-                rgb(221, 171, 34));
+                rgb(59, 207, 121) 50%,
+                rgb(17, 172, 82));
             background-position: 100% 0;
                 background-size: 200% 100%;
                 transition: all .25s ease-in;
@@ -104,12 +109,13 @@
             }
         #tents:hover {
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
         #baby-ex {
             background: rgb(240, 237, 68);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
@@ -122,12 +128,13 @@
             }
         #baby-ex:hover {
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
         #matts {
             background: rgb(255, 88, 37);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
@@ -140,17 +147,18 @@
             }
         #matts:hover {
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
         #toy-boxes {
             background: rgb(216, 0, 0);
-            color:black;
+            color:white;
             background-image: linear-gradient(to left,
                 transparent,
                 transparent 50%,
-                rgb(75, 204, 75) 50%,
-                rgb(61, 201, 42));
+                rgb(39, 201, 39) 50%,
+                rgb(45, 218, 22));
             background-position: 100% 0;
                 background-size: 200% 100%;
                 transition: all .25s ease-in;
@@ -158,8 +166,18 @@
             }
         #toy-boxes:hover {
             background-position: 0 0;
-            color: white;
+            color: black;
+            border: 2px solid black;
         }
 
+    }
+
+    #search-button {
+        color: black;
+        border: 1px solid rgb(206, 205, 205) !important;
+    }
+
+    #search-button:hover {
+        color: white;
     }
 }
