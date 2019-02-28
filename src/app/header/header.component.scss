@@ -7,9 +7,11 @@ $s-mobile: 320px;
     }
 }
 
-.navbar {
+nav.navbar {
     font-family: 'Cabin Sketch', cursive;
     font-size: 1.5rem;
+    background-color: hsla(0, 0%, 100%, 0.4) !important;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 1px 0px !important;
     // text-transform: uppercase;
     
     .navbar-text {

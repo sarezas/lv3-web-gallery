@@ -6,31 +6,39 @@
   </div>
   <div class="container">
     <div class="row justify-content-center align-items-center mx-auto d-flex" id="menu">
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="pillows">
-        <p>pillows</p>
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['/baby-ex']" id="baby-ex">
+        <p>baby ex.</p>
       </button>
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="cart">
-        <p>cart</p>
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['cart']" id="cart">
+        <p>cart: {{ (cart$ | async).itemCount }}</p>
       </button>
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="new-arrivals">
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['matts']" id="matts">
+        <p>matts</p>
+      </button>
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['new-items']" id="new-items">
         <p>new items</p>
-      </button>
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="puffs">
-        <p>puffs</p>
       </button>
     </div>
     <div class="row justify-content-center align-items-center mx-auto d-flex" id="menu">
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="tents">
-        <p>tents</p>
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['pillows']" id="pillows">
+        <p>pillows</p>
       </button>
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="baby-ex">
-        <p>baby ex.</p>
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['puffs']" id="puffs">
+        <p>puffs</p>
       </button>
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="matts">
-        <p>matts</p>
-      </button>
-      <button class="btn col-2 m-3 p-3 justify-content-center menu-item" id="toy-boxes">
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['t-boxes']" id="toy-boxes">
         <p>t-boxes</p>
+      </button>
+      <button class="btn col-2 m-2 p-2 justify-content-center menu-item"
+        [routerLink]="['tents']" id="tents">
+        <p>tents</p>
       </button>
     </div>
     <div class="row justify-content-center align-items-center mx-auto d-flex" id="search-bar">
@@ -45,7 +53,7 @@
     </div>
   </div>
   <hr>
-  <div class="row justify-content-center align-items-center mx-auto" id="menu-cards">
+  <div class="row justify-content-center" id="menu-cards">
     <router-outlet></router-outlet>
     <!-- <div class="col-4 justify-content-center menu-card">
       <p>item 1</p>
@@ -66,4 +74,5 @@
       <p>item 6</p>
     </div> -->
   </div>
+  <hr>
 </div>

@@ -1,20 +1,42 @@
 #shop-wrapper {
     font-family: 'Cabin Sketch', cursive;
+    max-width: 830px;
+    height: auto;
 
     #menu {
 
         .menu-item {
             display: flex;
             justify-content: center;
-            border: 2px solid rgb(206, 194, 141);
+            border: 2px solid rgb(206, 189, 141);
             border-radius: 5px;
             overflow: auto;
             white-space: nowrap;
+
+            &:active, &:focus {
+                outline: none !important;
+                box-shadow: none;
+            }
     
-            p, #searchBtn {
+            p, #search-button {
                 margin: 10px 10px;
                 padding: 10px 10px;
             }
+
+            #search-button {
+                color: black;
+                border: 1px solid rgb(206, 205, 205) !important;
+            }
+
+            #search-button:hover {
+                color: white;
+            }
+
+            // #search-button:active, #search-button:focus {
+            //         outline: none !important;
+            //         box-shadow: none;
+            //     }
+
         }
 
         #pillows {
@@ -55,7 +77,7 @@
             border: 2px solid black;
         }
 
-        #new-arrivals {
+        #new-items {
             background: rgb(61, 59, 187);
             color:white;
             background-image: linear-gradient(to left,
@@ -68,7 +90,7 @@
                 transition: all .25s ease-in;
                 
             }
-        #new-arrivals:hover {
+        #new-items:hover {
             content: attr(data-hover);
             background-position: 0 0;
             color: black;
@@ -170,14 +192,5 @@
             border: 2px solid black;
         }
 
-    }
-
-    #search-button {
-        color: black;
-        border: 1px solid rgb(206, 205, 205) !important;
-    }
-
-    #search-button:hover {
-        color: white;
     }
 }
