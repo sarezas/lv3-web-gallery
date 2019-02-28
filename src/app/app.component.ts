@@ -14,6 +14,8 @@ import { ShopItem } from './shared/shop-item.model';
 })
 export class AppComponent  {
   title = 'laukinukas v3';
-  constructor() {}
+  constructor(private store: Store<ShopState>) {
+    this.store.dispatch(new shopActions.GetItems());
+  }
   // dispatch the AppLoaded action here or in the constructor?
 }

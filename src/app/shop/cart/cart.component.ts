@@ -17,7 +17,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.cart$ = this.store.select('shop');
-    this.store.dispatch(new shopActions.GetItems());
   }
 
 }

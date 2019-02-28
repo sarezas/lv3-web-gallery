@@ -32,7 +32,7 @@ export class GetItems implements Action {
 
 export class GetItemsSuccess implements Action {
     readonly type = GET_ITEMS_SUCCESS;
-    constructor(public payload: ShopItem[]) {}
+    constructor(public payload: ShopItem) {}
 }
 
 export type Actions =

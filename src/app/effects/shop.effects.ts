@@ -18,7 +18,7 @@ export class ShopEffects {
                 private dbs: DatabaseService,
                 private afDb: AngularFireDatabase) {}
 
-    database = firebase.database().ref('cart');
+    database = firebase.database().ref('/cart');
 
     @Effect()
     addShopItem: Observable<any> = this.actions.pipe(
@@ -35,11 +35,44 @@ export class ShopEffects {
     @Effect()
     getShopItems: Observable<any> = this.actions.pipe(
         ofType(shopActions.GET_ITEMS),
-        switchMap((payload: ShopItem[]) => this.database.once('value', function(snapshot) {
-            payload = snapshot.val();
-            console.log(payload);
-            map(() => new shopActions.GetItemsSuccess(payload));
-            console.log(payload);
-        })),
+        switchMap(() => {
+            return of(this.database.once('value'))
+            .pipe(
+                map((payload) => {
+                    return {
+                        type: 'GET_ITEMS_SUCCESS',
+                        payload: payload
+                    };
+                }
+            ));
+        })
     );
+
+    // galima ir sita istrinti
+    // @Effect()
+    // getShopItems: Observable<any> = this.actions.pipe(
+    //     ofType(shopActions.GET_ITEMS),
+    //     switchMap(() => this.database.once('value')
+    //         .then(function(snapshot) {
+    //             const dbItems = Object.entries(snapshot.val());
+    //             console.log(dbItems);
+    //             map(() => new shopActions.GetItemsSuccess(dbItems));
+    //         })),
+    //         map(() => {
+    //             return {
+    //                 type: shopActions.GET_ITEMS_SUCCESS
+    //             };
+    //         }
+    //     )
+    // );
+
+    // @Effect()
+    // getShopItems: Observable<any> = this.actions.pipe(
+    //     ofType(shopActions.GET_ITEMS),
+    //     switchMap((payload: any[]) => this.database.once('value', function(snapshot) {
+            //     const dbItem = keys[i];
+    //     })),
+    //     map(() => {
+    //     })
+    // );
 }

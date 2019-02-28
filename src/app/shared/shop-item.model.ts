@@ -14,10 +14,10 @@ export class ShopItem {
     }
 }
 
-// export interface ShopItem {
-//     name: string;
-//     description: string;
-//     imageUrl: string;
-//     price: number;
-//     id?: number;
-// }
+export interface ShopItem {
+    name: string;
+    description: string;
+    imageUrl: string;
+    price: number;
+    id?: number;
+}
