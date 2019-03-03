@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, from } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireDatabase, snapshotChanges } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/database';
 import * as firebase from 'firebase';
 import * as shopActions from '../store/shop.actions';
 import { DatabaseService } from '../services/database.service';
-import { map, switchMap, mergeMap, catchError, mapTo, tap, switchMapTo, merge } from 'rxjs/operators';
-import { ShopItem } from '../shared/shop-item.model';
-import { isNgTemplate } from '@angular/compiler';
+import { map, switchMap } from 'rxjs/operators';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 export type Action = shopActions.Actions;
 
@@ -19,7 +18,6 @@ export class ShopEffects {
                 private dbs: DatabaseService,
                 private afDb: AngularFireDatabase) {}
 
-    // database = firebase.database().ref('cart/');
     database = firebase.database();
 
     @Effect()
@@ -29,7 +27,30 @@ export class ShopEffects {
         map(payload => {
             this.database.ref('cart').push(payload);
             return {
-                type: 'LOAD_ITEM_TO_CART_SUCCESS'            // jei reiks, atkeisti atgal i shopActions.LOAD_ITEM...
+                type: 'LOAD_ITEM_TO_CART_SUCCESS'
+            };
+        })
+    );
+
+    @Effect()
+    removeShopItem: Observable<any> = this.actions.pipe(
+        ofType(shopActions.DELETE_ITEM_FROM_CART),
+        map((action: shopActions.DeleteItemFromCart) => action.payload),
+        map(payload => {
+            const shopItemsInDb = this.database.ref('cart');
+            shopItemsInDb.once('value', snap => {
+                const data = snap.val();
+                const dataKeys = Object.entries(data);
+                console.log(dataKeys);
+                for (let i = 0; i <= dataKeys.length; i++) {
+                    const k = dataKeys[i];
+                    const kstring = String(k[0]);
+                    console.log(kstring);
+                    return shopItemsInDb.child(kstring).remove();
+                }
+            });
+            return {
+                type: 'DELETE_ITEM_FROM_CART_SUCCESS'
             };
         })
     );
@@ -48,7 +69,6 @@ export class ShopEffects {
                         for (let i = 0; i <= dbItems.length; i++) {
                             array.push(dbItems[i]);
                         }
-                        console.log(array);
                         return {
                             type: 'GET_ITEMS_SUCCESS',
                             payload: dbItems

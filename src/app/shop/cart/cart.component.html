@@ -7,7 +7,7 @@
           <h5 class="card-title font-weight-bold" style="overflow: auto; white-space: nowrap;">{{ item.name }}</h5>
           <p class="card-text" style="word-wrap: break-word;">{{ item.description }}</p>
           <p class="card-text" style="word-wrap: break-word;">{{ item.price }} &euro;</p>
-          <a class="btn btn-primary btn-sm btn-rounded">Add to cart</a>
+          <a class="btn btn-primary btn-sm btn-rounded" (click)="removeItemFromDb(item.id)">Remove</a>
         </div>
       </div>
     </div>

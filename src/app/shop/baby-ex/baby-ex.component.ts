@@ -25,7 +25,6 @@ export class BabyExComponent implements OnInit {
   }
 
   addToCart(item: ShopItem) {
-    console.log(item);
     this.store.dispatch(new shopActions.LoadItemToCart(item));
   }
 }
