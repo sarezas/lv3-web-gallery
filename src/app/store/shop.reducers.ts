@@ -37,8 +37,8 @@ export function ShopReducer(state = initialState, action: shopActions.Actions): 
         case shopActions.GET_ITEMS_SUCCESS: {
             return {
                 ...state,
-                shopItems: [action.payload],
-                itemCount: state.shopItems.length + 1
+                shopItems: [...action.payload],
+                itemCount: action.payload.length
             };
         }
         default:

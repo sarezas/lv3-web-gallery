@@ -8,6 +8,7 @@ import * as shopActions from '../store/shop.actions';
 import { DatabaseService } from '../services/database.service';
 import { map, switchMap, mergeMap, catchError, mapTo, tap, switchMapTo, merge } from 'rxjs/operators';
 import { ShopItem } from '../shared/shop-item.model';
+import { isNgTemplate } from '@angular/compiler';
 
 export type Action = shopActions.Actions;
 
@@ -18,16 +19,17 @@ export class ShopEffects {
                 private dbs: DatabaseService,
                 private afDb: AngularFireDatabase) {}
 
-    database = firebase.database().ref('/cart');
+    // database = firebase.database().ref('cart/');
+    database = firebase.database();
 
     @Effect()
     addShopItem: Observable<any> = this.actions.pipe(
         ofType(shopActions.LOAD_ITEM_TO_CART),
         map((action: shopActions.LoadItemToCart) => action.payload),
         map(payload => {
-            this.database.push(payload);
+            this.database.ref('cart').push(payload);
             return {
-                type: shopActions.LOAD_ITEM_TO_CART_SUCCESS
+                type: 'LOAD_ITEM_TO_CART_SUCCESS'            // jei reiks, atkeisti atgal i shopActions.LOAD_ITEM...
             };
         })
     );
@@ -35,44 +37,24 @@ export class ShopEffects {
     @Effect()
     getShopItems: Observable<any> = this.actions.pipe(
         ofType(shopActions.GET_ITEMS),
-        switchMap(() => {
-            return of(this.database.once('value'))
-            .pipe(
-                map((payload) => {
-                    return {
-                        type: 'GET_ITEMS_SUCCESS',
-                        payload: payload
-                    };
-                }
-            ));
+        switchMap(data => {
+            return from(this.database.ref('cart').once('value', snap => {
+                snap.forEach(childSnap => childSnap.val());
+            }))
+                .pipe(
+                    map((payload) => {
+                        const dbItems = Object.values(payload.val());
+                        const array = [];
+                        for (let i = 0; i <= dbItems.length; i++) {
+                            array.push(dbItems[i]);
+                        }
+                        console.log(array);
+                        return {
+                            type: 'GET_ITEMS_SUCCESS',
+                            payload: dbItems
+                        };
+                    }
+                ));
         })
     );
-
-    // galima ir sita istrinti
-    // @Effect()
-    // getShopItems: Observable<any> = this.actions.pipe(
-    //     ofType(shopActions.GET_ITEMS),
-    //     switchMap(() => this.database.once('value')
-    //         .then(function(snapshot) {
-    //             const dbItems = Object.entries(snapshot.val());
-    //             console.log(dbItems);
-    //             map(() => new shopActions.GetItemsSuccess(dbItems));
-    //         })),
-    //         map(() => {
-    //             return {
-    //                 type: shopActions.GET_ITEMS_SUCCESS
-    //             };
-    //         }
-    //     )
-    // );
-
-    // @Effect()
-    // getShopItems: Observable<any> = this.actions.pipe(
-    //     ofType(shopActions.GET_ITEMS),
-    //     switchMap((payload: any[]) => this.database.once('value', function(snapshot) {
-            //     const dbItem = keys[i];
-    //     })),
-    //     map(() => {
-    //     })
-    // );
 }

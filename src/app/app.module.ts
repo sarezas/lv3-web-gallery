@@ -6,7 +6,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { DatabaseService } from './services/database.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -48,6 +48,7 @@ import { ShopEffects } from './effects/shop.effects';
     AppRoutingModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(), // remove if problematic. adds offline capabilities
     EffectsModule.forRoot([ShopEffects]),
     StoreModule.forRoot({shop: ShopReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
