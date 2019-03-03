@@ -36,16 +36,14 @@ export class ShopEffects {
     removeShopItem: Observable<any> = this.actions.pipe(
         ofType(shopActions.DELETE_ITEM_FROM_CART),
         map((action: shopActions.DeleteItemFromCart) => action.payload),
-        map(payload => {
+        map(() => {
             const shopItemsInDb = this.database.ref('cart');
             shopItemsInDb.once('value', snap => {
                 const data = snap.val();
                 const dataKeys = Object.entries(data);
-                console.log(dataKeys);
                 for (let i = 0; i <= dataKeys.length; i++) {
                     const k = dataKeys[i];
                     const kstring = String(k[0]);
-                    console.log(kstring);
                     return shopItemsInDb.child(kstring).remove();
                 }
             });
@@ -58,7 +56,7 @@ export class ShopEffects {
     @Effect()
     getShopItems: Observable<any> = this.actions.pipe(
         ofType(shopActions.GET_ITEMS),
-        switchMap(data => {
+        switchMap(() => {
             return from(this.database.ref('cart').once('value', snap => {
                 snap.forEach(childSnap => childSnap.val());
             }))
