@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import * as firebase from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
 import * as shopActions from '../store/shop.actions';
 import { map, switchMap } from 'rxjs/operators';
 import { Action } from 'rxjs/internal/scheduler/Action';
@@ -10,7 +11,7 @@ export type Action = shopActions.Actions;
 
 @Injectable()
 export class ShopEffects {
-    constructor(private actions: Actions) { }
+    constructor(private actions: Actions, private firestore: AngularFirestore) { }
 
     dbRef = firebase.database().ref();
     cartRef = this.dbRef.child('cart');
