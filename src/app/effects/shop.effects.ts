@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { Effect, Actions, ofType } from '@ngrx/effects';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireDatabase } from '@angular/fire/database';
 import * as firebase from 'firebase';
 import * as shopActions from '../store/shop.actions';
-import { DatabaseService } from '../services/database.service';
 import { map, switchMap } from 'rxjs/operators';
 import { Action } from 'rxjs/internal/scheduler/Action';
 
@@ -13,10 +10,7 @@ export type Action = shopActions.Actions;
 
 @Injectable()
 export class ShopEffects {
-    constructor(private actions: Actions,
-        private firestore: AngularFirestore,
-        private dbs: DatabaseService,
-        private afDb: AngularFireDatabase) { }
+    constructor(private actions: Actions) { }
 
     dbRef = firebase.database().ref();
     cartRef = this.dbRef.child('cart');
@@ -61,7 +55,6 @@ export class ShopEffects {
         ofType(shopActions.DELETE_ITEM_FROM_CART),
         map((action: shopActions.DeleteItemFromCart) => action.payload),
         map((payload) => {
-            console.log(payload);
             const itemId = payload.id;
             const selectedItem = this.cartRef.orderByChild('id').equalTo(itemId);
             selectedItem.once('value', snap => {

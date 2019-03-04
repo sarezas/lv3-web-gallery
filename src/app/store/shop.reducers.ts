@@ -15,7 +15,6 @@ export function ShopReducer(state = initialState, action: shopActions.Actions): 
             return {
                 ...state,
                 shopItems: [...state.shopItems, action.payload],
-                // itemCount: state.itemCount + 1
                 itemCount: state.shopItems.length + 1
             };
         }
