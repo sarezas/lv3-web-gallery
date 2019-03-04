@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
   styleUrls: ['./t-boxes.component.scss']
 })
 export class TBoxesComponent implements OnInit {
-  tBoxes: ShopItem[] = [
+  @Output() tBoxes: ShopItem[] = [
     new ShopItem('Pink Stars', 'A pink stars toy box',
       'http://laukinukas.lt/image/cache/catalog/Zaisl%C5%B3%20krep%C5%A1iai/zk2-500x500.jpg', 20, 27),
     new ShopItem('Blue Stars', 'A blue stars toy box',

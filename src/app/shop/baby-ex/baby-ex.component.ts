@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as shopActions from '../../store/shop.actions';
@@ -12,7 +12,7 @@ import { ShopState } from '../../shared/shop.state';
   styleUrls: ['./baby-ex.component.scss']
 })
 export class BabyExComponent implements OnInit {
-  babyExs: ShopItem[] = [
+  @Output() babyExs: ShopItem[] = [
     new ShopItem('Mountains', 'A hand-made wooden stand', 'https://mdbootstrap.com/img/Photos/Others/img (36).jpg', 30, 1),
     new ShopItem('Sexy Lady', 'A blue star play matt',
       'https://media.self.com/photos/589cab5b695e95ff576aacec/master/pass/workout-tips.jpg', 35, 2),

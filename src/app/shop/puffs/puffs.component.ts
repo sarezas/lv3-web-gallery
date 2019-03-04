@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
   styleUrls: ['./puffs.component.scss']
 })
 export class PuffsComponent implements OnInit {
-  puffs: ShopItem[] = [
+  @Output() puffs: ShopItem[] = [
     new ShopItem('Yellow Zig-zag Puff', 'A yellow and white zig-zag puff',
     'http://laukinukas.lt/image/cache/catalog/pufai/pf-500x500.jpg', 19, 12),
   new ShopItem('Grey Zig-zag Puff', 'A grey zig-zag puff',

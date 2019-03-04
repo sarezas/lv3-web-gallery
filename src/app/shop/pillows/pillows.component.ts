@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
   styleUrls: ['./pillows.component.scss']
 })
 export class PillowsComponent implements OnInit {
-  pillows: ShopItem[] = [
+  @Output() pillows: ShopItem[] = [
     new ShopItem('Deco Star Pillow', 'A cotton pillow for adults',
       'http://laukinukas.lt/image/cache/catalog/Pagalv%C4%97l%C4%97s/p5-500x500.jpg', 7, 6),
     new ShopItem('Deco Cloud Pillow', 'A linen blue material for optimum baby comfort',

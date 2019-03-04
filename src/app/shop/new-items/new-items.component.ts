@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
   styleUrls: ['./new-items.component.scss']
 })
 export class NewItemsComponent implements OnInit {
-  newItems: ShopItem[] = [];
+  @Output() newItems: ShopItem[] = [];
   constructor() { }
 
   ngOnInit() {

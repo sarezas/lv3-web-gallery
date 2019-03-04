@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
   styleUrls: ['./tents.component.scss']
 })
 export class TentsComponent implements OnInit {
-  tents: ShopItem[] = [
+  @Output() tents: ShopItem[] = [
     new ShopItem('Creme Tent', 'A spacious fort for kids',
       'http://laukinukas.lt/image/cache/catalog/Palapin%C4%97s/wigvam/w3-500x500.png', 90, 21),
     new ShopItem('Grey Zig-zag Dot Tent', 'A cubic busa tent for every kid',

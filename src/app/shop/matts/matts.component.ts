@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
   styleUrls: ['./matts.component.scss']
 })
 export class MattsComponent implements OnInit {
-  matts: ShopItem[] = [
+  @Output() matts: ShopItem[] = [
     new ShopItem('Blue Star Matt', 'A play matt with blue stars',
       'http://laukinukas.lt/image/cache/catalog/kilim%C4%97liai/kl-500x500.jpg', 30, 4),
     new ShopItem('Colorful Matt', 'A colorful play matt',

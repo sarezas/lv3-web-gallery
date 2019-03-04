@@ -15,14 +15,11 @@ import { ShopItem } from '../shared/shop-item.model';
 })
 export class ShopComponent implements OnInit {
   cart$: Observable<number>;
-  // items: ShopItem[];
   constructor(private store: Store<ShopState>) {
-    // this.cart$ = firebase.database().ref('cart');
   }
 
   ngOnInit() {
     this.cart$ = this.store.select('shop');
-    // console.log(this.items);
   }
 
 }
