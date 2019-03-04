@@ -14,50 +14,18 @@ export type Action = shopActions.Actions;
 @Injectable()
 export class ShopEffects {
     constructor(private actions: Actions,
-                private firestore: AngularFirestore,
-                private dbs: DatabaseService,
-                private afDb: AngularFireDatabase) {}
+        private firestore: AngularFirestore,
+        private dbs: DatabaseService,
+        private afDb: AngularFireDatabase) { }
 
-    database = firebase.database();
-
-    @Effect()
-    addShopItem: Observable<any> = this.actions.pipe(
-        ofType(shopActions.LOAD_ITEM_TO_CART),
-        map((action: shopActions.LoadItemToCart) => action.payload),
-        map(payload => {
-            this.database.ref('cart').push(payload);
-            return {
-                type: 'LOAD_ITEM_TO_CART_SUCCESS'
-            };
-        })
-    );
-
-    @Effect()
-    removeShopItem: Observable<any> = this.actions.pipe(
-        ofType(shopActions.DELETE_ITEM_FROM_CART),
-        map((action: shopActions.DeleteItemFromCart) => action.payload),
-        map(() => {
-            const shopItemsInDb = this.database.ref('cart');
-            shopItemsInDb.once('value', snap => {
-                const data = snap.val();
-                const dataKeys = Object.entries(data);
-                for (let i = 0; i <= dataKeys.length; i++) {
-                    const k = dataKeys[i];
-                    const kstring = String(k[0]);
-                    return shopItemsInDb.child(kstring).remove();
-                }
-            });
-            return {
-                type: 'DELETE_ITEM_FROM_CART_SUCCESS'
-            };
-        })
-    );
+    dbRef = firebase.database().ref();
+    cartRef = this.dbRef.child('cart');
 
     @Effect()
     getShopItems: Observable<any> = this.actions.pipe(
         ofType(shopActions.GET_ITEMS),
         switchMap(() => {
-            return from(this.database.ref('cart').once('value', snap => {
+            return from(this.cartRef.once('value', snap => {
                 snap.forEach(childSnap => childSnap.val());
             }))
                 .pipe(
@@ -72,7 +40,38 @@ export class ShopEffects {
                             payload: dbItems
                         };
                     }
-                ));
+                    ));
+        })
+    );
+
+    @Effect()
+    addShopItem: Observable<any> = this.actions.pipe(
+        ofType(shopActions.LOAD_ITEM_TO_CART),
+        map((action: shopActions.LoadItemToCart) => action.payload),
+        map(payload => {
+            this.cartRef.push(payload);
+            return {
+                type: 'LOAD_ITEM_TO_CART_SUCCESS'
+            };
+        })
+    );
+
+    @Effect()
+    removeShopItem: Observable<any> = this.actions.pipe(
+        ofType(shopActions.DELETE_ITEM_FROM_CART),
+        map((action: shopActions.DeleteItemFromCart) => action.payload),
+        map((payload) => {
+            console.log(payload);
+            const itemId = payload.id;
+            const selectedItem = this.cartRef.orderByChild('id').equalTo(itemId);
+            selectedItem.once('value', snap => {
+                snap.forEach(child => {
+                    child.ref.remove();
+                });
+            });
+            return {
+                type: 'DELETE_ITEM_FROM_CART_SUCCESS'
+            };
         })
     );
 }

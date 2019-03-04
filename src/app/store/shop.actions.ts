@@ -19,7 +19,7 @@ export class LoadItemToCartSuccess implements Action {
 
 export class DeleteItemFromCart implements Action {
     readonly type = DELETE_ITEM_FROM_CART;
-    constructor(public payload: number) {}
+    constructor(public payload: ShopItem) {}
 }
 
 export class DeleteItemFromCartSuccess implements Action {

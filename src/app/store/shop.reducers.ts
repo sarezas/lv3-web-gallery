@@ -22,8 +22,7 @@ export function ShopReducer(state = initialState, action: shopActions.Actions): 
         case shopActions.DELETE_ITEM_FROM_CART: {
             return {
                 ...state,
-                // shopItems: state.shopItems.filter(item => item.id !== action.payload)
-                shopItems: [...state.shopItems.filter(item => item.id !== action.payload)],
+                shopItems: [...state.shopItems.filter(item => item.id !== action.payload.id)],
                 itemCount: state.shopItems.length - 1
             };
         }
