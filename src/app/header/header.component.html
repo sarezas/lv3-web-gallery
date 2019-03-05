@@ -1,5 +1,5 @@
 <div class="container-fluid m-0 p-0">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <nav class="navbar navbar-expand-md navbar-light" appNavAppear>
     <a class="navbar-brand" [routerLink]="['/']">
       <img class="img-fluid" src="../../assets/imgs/lauk.png" style="max-height: 50px;">
     </a>
@@ -14,20 +14,28 @@
         </li>
       </ul>
       <span class="navbar-text">
-        <a class="nav-link" href="#" data-title="+37061234567&#13;info@laukinukas.lt" tabindex="-1"
-          aria-disabled="true" id="introSocial">
-          social
+        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" id="introSocial">
+          contacts
           <span class="hidden">
-            <a href="www.facebook.com" target="_blank">facebook</a>
-            <a href="#">Ig</a>
-            <a href="#">Belekas</a>
+            <a id="telephone" href="tel:+37061234567">+37061234567</a>
+            <a id="email" href="mail:info@laukinukas.lt">info@laukinukas.lt</a>
           </span>
         </a>
       </span>
       <span class="navbar-text">
-        <a class="nav-link" href="#" data-title="+37061234567&#13;info@laukinukas.lt" tabindex="-1"
-          aria-disabled="true" id="introTextContacts">
-          contacts
+        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" id="introSocial">
+          social
+          <span class="hidden">
+            <a id="fb" href="www.facebook.com" target="_blank">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a id="instagram" href="https://www.instagram.com/laukinukass/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a id="pinterest" href="https://www.pinterest.com/wildlifeLT/laukinukaswildlifelt/?lp=true" target="_blank">
+              <i class="fab fa-pinterest-square"></i>
+            </a>
+          </span>
         </a>
       </span>
     </div>

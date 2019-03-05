@@ -6,7 +6,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import * as shopActions from '../store/shop.actions';
 import { map, switchMap } from 'rxjs/operators';
 import { Action } from 'rxjs/internal/scheduler/Action';
-import { snapshotChanges } from '@angular/fire/database';
 
 export type Action = shopActions.Actions;
 

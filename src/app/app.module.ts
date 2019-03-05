@@ -28,6 +28,8 @@ import { CarouselComponent } from './shop/carousel/carousel.component';
 import { ShopReducer } from './store/shop.reducers';
 import { ShopEffects } from './effects/shop.effects';
 import { FilterPipe } from './shop/filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarDirective } from './navbar.directive';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { FilterPipe } from './shop/filter.pipe';
     TBoxesComponent,
     CarouselComponent,
     SearchComponent,
-    FilterPipe
+    FilterPipe,
+    NavbarDirective
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { FilterPipe } from './shop/filter.pipe';
     AngularFirestoreModule.enablePersistence(), // remove if problematic. adds offline capabilities
     EffectsModule.forRoot([ShopEffects]),
     StoreModule.forRoot({shop: ShopReducer}),
-    StoreDevtoolsModule.instrument({ maxAge: 25 })
+    StoreDevtoolsModule.instrument({ maxAge: 25 }),
+    BrowserAnimationsModule
   ],
   providers: [DatabaseService, AngularFirestore, AngularFireDatabase],
   bootstrap: [AppComponent]
