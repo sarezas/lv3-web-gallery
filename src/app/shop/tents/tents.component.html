@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-3" *ngFor="let item of tents; let i = index;">
-      <div class="card mb-2" style="width: 175.5px; height: 325px;">
-        <img class="card-img-top image-fluid" style="width: 173.5px; height: 115.73px;" [src]="item.imageUrl" alt="{{ item.name }}">
+    <div class="row justify-content-center mx-auto" id="card-wrapper">
+      <div class="card col-xs-3 col-sm-3 col-md-5 col-lg-5 m-2 mx-auto" style="min-width: 175.5px; min-height: 325px;"
+        *ngFor="let item of tents; let i = index;">
+        <img class="card-img-top img-fluid" [src]="item.imageUrl" alt="{{ item.name }}">
         <div class="card-body">
           <h5 class="card-title font-weight-bold" style="overflow: auto; white-space: nowrap;">{{ item.name }}</h5>
           <p class="card-text" style="word-wrap: break-word;">{{ item.description }}</p>
           <p class="card-text" style="word-wrap: break-word;">{{ item.price }} &euro;</p>
-          <a class="btn btn-primary btn-sm btn-rounded">Add to cart</a>
+          <a class="btn btn-primary btn-sm btn-rounded" (click)="addToCart(item)">Add to cart</a>
         </div>
       </div>
     </div>

@@ -6,50 +6,53 @@
   </div>
   <div class="container">
     <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row flex-sm-wrap" id="menu">
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
         [routerLink]="['/baby-ex']" id="baby-ex">
         <p>baby ex.</p>
       </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
         [routerLink]="['cart']" id="cart">
         <p>cart: {{ (cart$ | async).itemCount }}</p>
       </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
         [routerLink]="['matts']" id="matts">
         <p>matts</p>
       </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
-        [routerLink]="['new-items']" id="new-items">
-        <p>new items</p>
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
+        [routerLink]="['search']" id="new-items">
+        <p>
+          search
+          <i class="fas fa-search"></i>
+        </p>
       </button>
     </div>
     <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-md-row" id="menu">
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
         [routerLink]="['pillows']" id="pillows">
         <p>pillows</p>
       </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
         [routerLink]="['puffs']" id="puffs">
         <p>puffs</p>
       </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
         [routerLink]="['t-boxes']" id="toy-boxes">
         <p>t-boxes</p>
       </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-2 p-2 justify-content-center menu-item"
+      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+        justify-content-center menu-item"
         [routerLink]="['tents']" id="tents">
         <p>tents</p>
       </button>
     </div>
     <div class="row justify-content-center align-items-center mx-auto d-flex" id="search-bar">
-      <form class="mx-2 my-auto d-inline w-100">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="looking for ...?">
-          <span class="input-group-append">
-            <button class="btn btn-outline-primary" type="button" id="search-button">go</button>
-          </span>
-        </div>
-      </form>
     </div>
   </div>
   <hr>

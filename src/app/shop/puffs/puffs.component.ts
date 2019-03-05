@@ -1,5 +1,14 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShopItem } from 'src/app/shared/shop-item.model';
+
+export const puffs: ShopItem[] = [
+  new ShopItem('Yellow Zig-zag Puff', 'A yellow and white zig-zag puff',
+  'http://laukinukas.lt/image/cache/catalog/pufai/pf-500x500.jpg', 19, 12),
+new ShopItem('Grey Zig-zag Puff', 'A grey zig-zag puff',
+  'http://laukinukas.lt/image/cache/catalog/Pufai/CNT_1162-500x500.jpg', 19, 13),
+new ShopItem('Grey Stars Puff', 'A grey-starred puff',
+  'http://laukinukas.lt/image/cache/catalog/Pufai/PF1-500x500.jpg', 19, 14)
+];
 
 @Component({
   selector: 'app-puffs',
@@ -7,14 +16,7 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
   styleUrls: ['./puffs.component.scss']
 })
 export class PuffsComponent implements OnInit {
-  @Output() puffs: ShopItem[] = [
-    new ShopItem('Yellow Zig-zag Puff', 'A yellow and white zig-zag puff',
-    'http://laukinukas.lt/image/cache/catalog/pufai/pf-500x500.jpg', 19, 12),
-  new ShopItem('Grey Zig-zag Puff', 'A grey zig-zag puff',
-    'http://laukinukas.lt/image/cache/catalog/Pufai/CNT_1162-500x500.jpg', 19, 13),
-  new ShopItem('Grey Stars Puff', 'A grey-starred puff',
-    'http://laukinukas.lt/image/cache/catalog/Pufai/PF1-500x500.jpg', 19, 14)
-  ];
+  puffs: ShopItem[] = [...puffs];
   constructor() { }
 
   ngOnInit() {

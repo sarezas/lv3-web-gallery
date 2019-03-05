@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
@@ -17,7 +18,7 @@ import { ShopComponent } from './shop/shop.component';
 import { FooterComponent } from './footer/footer.component';
 import { PillowsComponent } from './shop/pillows/pillows.component';
 import { CartComponent } from './shop/cart/cart.component';
-import { NewItemsComponent } from './shop/new-items/new-items.component';
+import { SearchComponent } from './shop/search/search.component';
 import { PuffsComponent } from './shop/puffs/puffs.component';
 import { TentsComponent } from './shop/tents/tents.component';
 import { BabyExComponent } from './shop/baby-ex/baby-ex.component';
@@ -26,6 +27,7 @@ import { TBoxesComponent } from './shop/t-boxes/t-boxes.component';
 import { CarouselComponent } from './shop/carousel/carousel.component';
 import { ShopReducer } from './store/shop.reducers';
 import { ShopEffects } from './effects/shop.effects';
+import { FilterPipe } from './shop/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,16 +37,18 @@ import { ShopEffects } from './effects/shop.effects';
     FooterComponent,
     PillowsComponent,
     CartComponent,
-    NewItemsComponent,
     PuffsComponent,
     TentsComponent,
     BabyExComponent,
     MattsComponent,
     TBoxesComponent,
-    CarouselComponent
+    CarouselComponent,
+    SearchComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),

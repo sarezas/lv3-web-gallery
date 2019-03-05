@@ -1,3 +1,46 @@
+$mobile-s: 320px;
+$mobile-m: 375px;
+$mobile-l: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
+
+@mixin mobile-s {
+    @media (min-width: #{$mobile-s}) {
+        @content;
+    }
+}
+
+@mixin mobile-m {
+    @media (min-width: #{$mobile-m}) {
+        @content;
+    }
+}
+
+@mixin mobile-l {
+    @media (min-width: #{$mobile-l}) {
+        @content;
+    }
+}  
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+} 
+
+@mixin laptop {
+    @media (min-width: #{$laptop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
 #shop-wrapper {
     font-family: 'Cabin Sketch', cursive;
     max-width: 830px;
@@ -17,26 +60,38 @@
                 outline: none !important;
                 box-shadow: none;
             }
+
+            p {
+                @include mobile-s {
+                    padding: 0px 0px !important;
+                }
+                @include tablet {
+                    padding: 10px 10px !important;
+                }
+            }
     
-            p, #search-button {
+            p {
                 margin: 10px 10px;
                 padding: 10px 10px;
             }
 
-            #search-button {
-                color: black;
-                border: 1px solid rgb(206, 205, 205) !important;
+            #search-bar {
+                // @include mobile-s {}
+
+                #search-button {
+                    color: black;
+                    border: 1px solid rgb(206, 205, 205) !important;
+                }
+    
+                #search-button:hover {
+                    color: white;
+                }
+    
+                // #search-button:active, #search-button:focus {
+                //         outline: none !important;
+                //         box-shadow: none;
+                //     }
             }
-
-            #search-button:hover {
-                color: white;
-            }
-
-            // #search-button:active, #search-button:focus {
-            //         outline: none !important;
-            //         box-shadow: none;
-            //     }
-
         }
 
         #pillows {
