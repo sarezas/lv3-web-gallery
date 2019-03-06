@@ -1,8 +1,8 @@
-.col-3 {
-    flex-direction: column;
-    justify-content: center;
-    white-space: nowrap;
-}
+// // .col-3 {
+// //     flex-direction: column;
+// //     justify-content: center;
+// //     white-space: nowrap;
+// // }
 
 ul.list-group  {
     list-style: none;
@@ -12,32 +12,38 @@ ul.list-group  {
     }
 }
 
-#footnote-wrapper {
-    // background-color: hsla(129, 53%, 90%, 0.4) !important;
-}
+// // #footnote-wrapper {
+// //     // background-color: hsla(129, 53%, 90%, 0.4) !important;
+// // }
 
 #footnote {
-    font-size: .8rem;
+    font-size: .6rem;
+}
+
+#dev-signature {
+    display: flex;
+    justify-content: flex-start;
+    // align-content: flex-start;
 }
 
 #cash-cards {
     display: flex;
     justify-content: flex-end;
-    align-content: flex-end;
+    // align-content: flex-end;
 
     .fab.fa-cc-visa {
         color: rgb(255, 230, 0);
-        font-size: 1rem;
+        font-size: .8rem;
     
     }
     
     .fab.fa-cc-mastercard {
         color: rgb(6, 211, 6);
-        font-size: 1rem;
+        font-size: .8rem;
     }
     
     .fas.fa-globe-americas {
         color: rgb(241, 24, 9);
-        font-size: 1rem;
+        font-size: .8rem;
     }
 }

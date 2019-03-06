@@ -1,15 +1,23 @@
 $btn-color: rgb(49, 174, 212);
-$s-mobile: 320px;
+$mobile-s: 320px;
+$tablet: 768px;
 
-@mixin s-mobile {
-    @media (min-width: #{s-mobile}) {
-        @content;
-    }
+@mixin mobile-s {
+  @media (min-width: #{mobile-s}) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{tablet}) {
+      @content;
+  }
 }
 
 nav.navbar {
     font-family: 'Cabin Sketch', cursive;
     font-size: 1.5rem;
+    height: 60px;
     // background-color: hsla(184, 27%, 90%, 0.4) !important;
     // box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 1px 0px !important;
     // text-transform: uppercase;
@@ -19,47 +27,55 @@ nav.navbar {
       transform: rotate(360deg);
       transition: .3s ease-in;
     }
+
+    img#introText {
+      @include tablet {
+        width: 400px;
+        height: 45px;   
+      }
+    }
     
     .navbar-text {
-        #introSocial {
-          .hidden {
-            display: none;
-          }
-        }
 
-        .nav-link {
-          #telephone, #email, #fb, #instagram, #pinterest {
-            opacity: .5;
-            transition: opacity .2s ease-in;
-          }
-          #telephone:hover, #email:hover, #fb:hover, #instagram:hover, #pinterest:hover {
-            text-decoration: none;
-            color: $btn-color;
-            opacity: 1;
-          }
+      #introSocial {
+        .hidden {
+          display: none;
         }
+      }
 
-        #introSocial {
+      .nav-link {
+        #telephone, #email, #fb, #instagram, #pinterest {
           opacity: .5;
           transition: opacity .2s ease-in;
-          color: rgb(82, 120, 144);
-          position: relative;
-
-          &:hover {
-            color: $btn-color !important;
-            opacity: 1;
-
-              .hidden {
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                top: 100%;
-                left: -7px;
-                right: -7px;
-                padding: 15px;
-                z-index: 2;
-              }
-          }
         }
+        #telephone:hover, #email:hover, #fb:hover, #instagram:hover, #pinterest:hover {
+          text-decoration: none;
+          color: $btn-color;
+          opacity: 1;
+        }
+      }
+
+      #introSocial {
+        opacity: .5;
+        transition: opacity .2s ease-in;
+        color: rgb(82, 120, 144);
+        position: relative;
+
+        &:hover {
+          color: $btn-color !important;
+          opacity: 1;
+
+            .hidden {
+              position: absolute;
+              display: flex;
+              flex-direction: column;
+              top: 100%;
+              left: -7px;
+              right: -7px;
+              padding: 15px;
+              z-index: 2;
+            }
+        }
+      }
     }
 }

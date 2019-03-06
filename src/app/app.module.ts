@@ -29,7 +29,7 @@ import { ShopReducer } from './store/shop.reducers';
 import { ShopEffects } from './effects/shop.effects';
 import { FilterPipe } from './shop/filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarDirective } from './navbar.directive';
+import { NavbarDirective } from './header/navbar.directive';
 
 @NgModule({
   declarations: [
