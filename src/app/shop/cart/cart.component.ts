@@ -20,8 +20,6 @@ export class CartComponent implements OnInit {
   }
 
   removeItemFromDb(item: ShopItem) {
-    // this.cart$.subscribe(item => console.log(item));
-    // console.log(id);
     this.store.dispatch(new shopActions.DeleteItemFromCart(item));
   }
 

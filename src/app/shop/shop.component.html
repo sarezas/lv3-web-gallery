@@ -1,81 +1,61 @@
 <div class="container" id="shop-wrapper">
-  <div class="row justify-content-center mx-auto" id="shop-img-wrapper">
-    <div class="col-12 justify-content-center mx-auto">
-      <img class="img-fluid mx-auto" src="../../assets/imgs/store-2.png">
-    </div>
-  </div>
-  <div class="container">
-    <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row flex-sm-wrap" id="menu">
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['/baby-ex']" id="baby-ex">
-        <p>baby ex.</p>
-      </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['cart']" id="cart">
-        <p>cart: {{ (cart$ | async).itemCount }}</p>
-      </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['matts']" id="matts">
-        <p>matts</p>
-      </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['search']" id="new-items">
-        <p>
-          search
-          <i class="fas fa-search"></i>
-        </p>
-      </button>
-    </div>
-    <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-md-row" id="menu">
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['pillows']" id="pillows">
-        <p>pillows</p>
-      </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['puffs']" id="puffs">
-        <p>puffs</p>
-      </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['t-boxes']" id="toy-boxes">
-        <p>t-boxes</p>
-      </button>
-      <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-        justify-content-center menu-item"
-        [routerLink]="['tents']" id="tents">
-        <p>tents</p>
-      </button>
-    </div>
-    <div class="row justify-content-center align-items-center mx-auto d-flex" id="search-bar">
+  <div class="container parallax_wrapper">
+    <div class="parallax_layer parallax_layer-back"></div>
+    <div class="parallax_layer parallax_layer-content">
+      <div class="row justify-content-center mx-auto" id="shop-img-wrapper">
+        <div class="col-12 justify-content-center mx-auto">
+          <img class="img-fluid mx-auto" src="../../assets/imgs/store-2.png">
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row flex-sm-wrap"
+          id="menu">
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['/baby-ex']" id="baby-ex">
+            <p>baby ex.</p>
+          </button>
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['cart']" id="cart">
+            <p>cart: {{ (cart$ | async).itemCount }}</p>
+          </button>
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['matts']" id="matts">
+            <p>matts</p>
+          </button>
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['search']" id="new-items">
+            <p>
+              search
+              <i class="fas fa-search"></i>
+            </p>
+          </button>
+        </div>
+        <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-md-row" id="menu">
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['pillows']" id="pillows">
+            <p>pillows</p>
+          </button>
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['puffs']" id="puffs">
+            <p>puffs</p>
+          </button>
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['t-boxes']" id="toy-boxes">
+            <p>t-boxes</p>
+          </button>
+          <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
+              justify-content-center menu-item" [routerLink]="['tents']" id="tents">
+            <p>tents</p>
+          </button>
+        </div>
+        <div class="row justify-content-center align-items-center mx-auto d-flex" id="search-bar">
+        </div>
+      </div>
     </div>
   </div>
   <hr>
   <div class="row justify-content-center" id="menu-cards">
     <router-outlet></router-outlet>
-    <!-- <div class="col-4 justify-content-center menu-card">
-      <p>item 1</p>
-    </div>
-    <div class="col-4 justify-content-center menu-card">
-      <p>item 2</p>
-    </div>
-    <div class="col-4 justify-content-center menu-card">
-      <p>item 3</p>
-    </div>
-    <div class="col-4 justify-content-center menu-card">
-      <p>item 4</p>
-    </div>
-    <div class="col-4 justify-content-center menu-card">
-      <p>item 5</p>
-    </div>
-    <div class="col-4 justify-content-center menu-card">
-      <p>item 6</p>
-    </div> -->
   </div>
   <hr>
 </div>

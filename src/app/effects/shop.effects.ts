@@ -16,32 +16,37 @@ export class ShopEffects {
     dbRef = firebase.database().ref();
     cartRef = this.dbRef.child('cart');
 
-    // @Effect()
-    // getShopItems: Observable<any> = this.actions.pipe(
-    //     ofType(shopActions.GET_ITEMS),
-    //     switchMap(() => {
-    //         return from(this.cartRef.once('value', snap => {
-    //             snap.forEach(childSnap => childSnap.val());
-    //         }))
-    //             .pipe(
-    //                 map((data) => {
-    //                     if (data !== null) {
-    //                         const dbItems = Object.values(data.val());
-    //                         const array = [];
-    //                         for (let i = 0; i <= dbItems.length; i++) {
-    //                             array.push(dbItems[i]);
-    //                         }
-    //                         return {
-    //                             type: 'GET_ITEMS_SUCCESS',
-    //                             payload: dbItems
-    //                         };
-    //                     } else {
-    //                         return;
-    //                     }
-    //                 })
-    //             );
-    //     })
-    // );
+    @Effect()
+    getShopItems: Observable<any> = this.actions.pipe(
+        ofType(shopActions.GET_ITEMS),
+        switchMap(() => {
+            return from(this.cartRef.once('value', snap => {
+                snap.forEach(childSnap => childSnap.val());
+            }))
+                .pipe(
+                    map((data) => {
+                        let dbItems: any;
+                        const array = [];
+
+                        if (data.val() === null) {
+                            return {
+                                type: 'GET_ITEMS_SUCCESS',
+                                payload: array
+                            };
+                        } else {
+                            dbItems = Object.values(data.val());
+                        }
+                        for (let i = 0; i <= dbItems.length; i++) {
+                            array.push(dbItems[i]);
+                            return {
+                                type: 'GET_ITEMS_SUCCESS',
+                                payload: dbItems
+                            };
+                        }
+                    })
+                );
+        })
+    );
 
     @Effect()
     addShopItem: Observable<any> = this.actions.pipe(
