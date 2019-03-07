@@ -3,7 +3,8 @@
     <div class="col-xs-12 xol-sm-12 col-md-12 col-lg-12 m-0 p-0">
       <nav class="navbar navbar-expand-md navbar-light" appNavAppear>
         <a class="navbar-brand" [routerLink]="['/']">
-          <img class="img-fluid" src="../../assets/imgs/lauk.png" style="max-height: 50px;">
+          <img class="img-fluid" src="../../assets/imgs/lauk.png" style="max-height: 50px;"
+            data-toggle="tooltip" data-placement="right" title="Home">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
           aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,8 +20,14 @@
             <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" id="introSocial">
               contacts
               <span class="hidden">
-                <a id="telephone" href="tel:+37061234567">+37061234567</a>
-                <a id="email" href="mail:info@laukinukas.lt">info@laukinukas.lt</a>
+                <a id="telephone" href="tel:+37061234567"
+                  data-toggle="tooltip" data-placement="left" title="telephone">
+                  +37061234567
+                </a>
+                <a id="email" href="mail:info@laukinukas.lt"
+                  data-toggle="tooltip" data-placement="left" title="email">
+                  info@laukinukas.lt
+                </a>
               </span>
             </a>
           </span>
@@ -28,14 +35,16 @@
             <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" id="introSocial">
               social
               <span class="hidden">
-                <a id="fb" href="www.facebook.com" target="_blank">
+                <a id="fb" href="www.facebook.com" target="_blank"
+                  data-toggle="tooltip" data-placement="left" title="Facebook">
                   <i class="fab fa-facebook-square"></i>
                 </a>
-                <a id="instagram" href="https://www.instagram.com/laukinukass/" target="_blank">
+                <a id="instagram" href="https://www.instagram.com/laukinukass/" target="_blank"
+                  data-toggle="tooltip" data-placement="left" title="Instagram">
                   <i class="fab fa-instagram"></i>
                 </a>
                 <a id="pinterest" href="https://www.pinterest.com/wildlifeLT/laukinukaswildlifelt/?lp=true"
-                  target="_blank">
+                  target="_blank" data-toggle="tooltip" data-placement="left" title="Pinterest">
                   <i class="fab fa-pinterest-square"></i>
                 </a>
               </span>

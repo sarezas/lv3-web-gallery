@@ -1,3 +1,4 @@
+<!-- new -->
 <div class="container">
   <!-- modal start-->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -18,8 +19,8 @@
   </div>
   <!-- modal end -->
   <div class="row justify-content-center mx-auto" id="form-wrapper">
-    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-12">
-      <form class="mt-0 mb-3 d-inline w-100" id="filter">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+      <form class="mt-0 mb-2 d-inline w-100" id="filter">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="enter search word" [(ngModel)]="searchTerm"
             name="searchTerm">
@@ -28,13 +29,9 @@
     </div>
   </div>
   <div class="row justify-content-center mx-auto" id="card-wrapper">
-    <div class="card col-xs-3 col-sm-3 col-md-5 col-lg-5 m-2 mx-auto" style="min-width: 175.5px; min-height: 325px;"
-      *ngFor="let item of (shopItems | filter:searchTerm);">
-      <button 
-        type="button"
-        class="no-focus-outline m-0 p-0"
-        data-toggle="modal"
-        data-target="#exampleModal"
+    <div class="card col-xs-3 col-sm-3 col-md-4 col-lg-4 col-xl-4 my-2 mx-2"
+      style="max-width: 250px; max-height: 350px;" *ngFor="let item of (shopItems | filter:searchTerm);">
+      <button type="button" class="no-focus-outline m-0 p-0" data-toggle="modal" data-target="#exampleModal"
         (click)="showItemDetails(item.name, item.imageUrl)">
         <img class="card-img-top img-fluid" [src]="item.imageUrl" alt="{{ item.name }}">
       </button>
@@ -42,7 +39,7 @@
         <h5 class="card-title font-weight-bold" style="overflow: auto; white-space: nowrap;">{{ item.name }}</h5>
         <p class="card-text" style="word-wrap: break-word;">{{ item.description }}</p>
         <p class="card-text" style="word-wrap: break-word;">{{ item.price }} &euro;</p>
-        <a class="btn btn-primary btn-sm btn-rounded" (click)="addToCart(item)">Add to cart</a>
+        <a class="btn btn-primary btn-sm btn-rounded" (click)="removeItemFromDb(item)">Remove</a>
       </div>
     </div>
   </div>

@@ -18,10 +18,11 @@ nav.navbar {
     font-family: 'Cabin Sketch', cursive;
     font-size: 1.5rem;
     height: 60px;
-    // background-color: hsla(184, 27%, 90%, 0.4) !important;
-    // box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 1px 0px !important;
-    // text-transform: uppercase;
 
+    .navbar-brand, .navbar-brand:focus {
+      border: 0 !important;
+      outline: none !important;
+    }
     .navbar-brand:hover {
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
@@ -47,6 +48,7 @@ nav.navbar {
         #telephone, #email, #fb, #instagram, #pinterest {
           opacity: .5;
           transition: opacity .2s ease-in;
+          font-size: 1.2rem;
         }
         #telephone:hover, #email:hover, #fb:hover, #instagram:hover, #pinterest:hover {
           text-decoration: none;
@@ -56,7 +58,7 @@ nav.navbar {
       }
 
       #introSocial {
-        opacity: .5;
+        opacity: .7;
         transition: opacity .2s ease-in;
         color: rgb(82, 120, 144);
         position: relative;

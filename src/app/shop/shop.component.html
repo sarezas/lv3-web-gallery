@@ -1,60 +1,59 @@
 <div class="container" id="shop-wrapper">
-  <div class="container parallax_wrapper">
+  <div class="container justify-content-center mx-auto parallax_wrapper">
     <div class="parallax_layer parallax_layer-back"></div>
-    <div class="parallax_layer parallax_layer-content">
+    <!-- <div class="parallax_layer parallax_layer-content"> -->
       <div class="row justify-content-center mx-auto" id="shop-img-wrapper">
         <div class="col-12 justify-content-center mx-auto">
-          <img class="img-fluid mx-auto" src="../../assets/imgs/store-2.png">
+          <img class="img-fluid" src="../../assets/imgs/store-2.png">
         </div>
       </div>
       <div class="container">
-        <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row flex-sm-wrap"
+        <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row" id="menu"
           id="menu">
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['/baby-ex']" id="baby-ex">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['/baby-ex']" id="baby-ex">
             <p>baby ex.</p>
           </button>
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['cart']" id="cart">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['cart']" id="cart">
             <p>cart: {{ (cart$ | async).itemCount }}</p>
           </button>
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['matts']" id="matts">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['matts']" id="matts">
             <p>matts</p>
           </button>
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['search']" id="new-items">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['search']" id="search">
             <p>
               search
               <i class="fas fa-search"></i>
             </p>
           </button>
         </div>
-        <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-md-row" id="menu">
+        <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row" id="menu">
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['pillows']" id="pillows">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['pillows']" id="pillows">
             <p>pillows</p>
           </button>
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['puffs']" id="puffs">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['puffs']" id="puffs">
             <p>puffs</p>
           </button>
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['t-boxes']" id="toy-boxes">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['t-boxes']" id="toy-boxes">
             <p>t-boxes</p>
           </button>
           <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['tents']" id="tents">
+              justify-content-center menu-item" style="max-width: 255px;" [routerLink]="['tents']" id="tents">
             <p>tents</p>
           </button>
         </div>
-        <div class="row justify-content-center align-items-center mx-auto d-flex" id="search-bar">
-        </div>
       </div>
-    </div>
+    <!-- </div> -->
   </div>
   <hr>
-  <div class="row justify-content-center" id="menu-cards">
+  <div class="row justify-content-center mx-auto" id="menu-cards">
+  <!-- <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row">   -->
     <router-outlet></router-outlet>
   </div>
   <hr>

@@ -18,13 +18,9 @@
   </div>
   <!-- modal end -->
   <div class="row justify-content-center mx-auto" id="card-wrapper">
-    <div class="card col-xs-3 col-sm-3 col-md-5 col-lg-5 m-2 mx-auto" style="min-width: 175.5px; min-height: 325px;"
-      *ngFor="let item of puffs; let i = index;">
-      <button 
-        type="button"
-        class="no-focus-outline m-0 p-0"
-        data-toggle="modal"
-        data-target="#exampleModal"
+    <div class="card col-xs-3 col-sm-3 col-md-4 col-lg-4 col-xl-4 my-2 mx-2"
+      style="max-width: 250px; max-height: 350px;" *ngFor="let item of puffs; let i = index;">
+      <button type="button" class="no-focus-outline m-0 p-0" data-toggle="modal" data-target="#exampleModal"
         (click)="showItemDetails(item.name, item.imageUrl)">
         <img class="card-img-top img-fluid" [src]="item.imageUrl" alt="{{ item.name }}">
       </button>
@@ -32,7 +28,7 @@
         <h5 class="card-title font-weight-bold" style="overflow: auto; white-space: nowrap;">{{ item.name }}</h5>
         <p class="card-text" style="word-wrap: break-word;">{{ item.description }}</p>
         <p class="card-text" style="word-wrap: break-word;">{{ item.price }} &euro;</p>
-        <a class="btn btn-primary btn-sm btn-rounded" (click)="addToCart(item)">Add to cart</a>
+        <a class="btn btn-primary btn-sm btn-rounded" (click)="removeItemFromDb(item)">Remove</a>
       </div>
     </div>
   </div>

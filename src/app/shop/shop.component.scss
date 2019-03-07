@@ -43,7 +43,7 @@ $desktop: 1440px;
 
 #shop-wrapper {
     font-family: 'Cabin Sketch', cursive;
-    max-width: 830px;
+    max-width: 850px;
     height: auto;
 
     #menu {
@@ -86,11 +86,6 @@ $desktop: 1440px;
                 #search-button:hover {
                     color: white;
                 }
-    
-                // #search-button:active, #search-button:focus {
-                //         outline: none !important;
-                //         box-shadow: none;
-                //     }
             }
         }
 
@@ -132,7 +127,7 @@ $desktop: 1440px;
             border: 2px solid black;
         }
 
-        #new-items {
+        #search {
             background: rgb(61, 59, 187);
             color:white;
             background-image: linear-gradient(to left,
@@ -145,7 +140,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #new-items:hover {
+        #search:hover {
             content: attr(data-hover);
             background-position: 0 0;
             color: black;
