@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { ShopState } from 'src/app/shared/shop.state';
+import * as shopActions from '../../store/shop.actions';
+
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 export const matts: ShopItem[] = [
@@ -15,9 +19,18 @@ export const matts: ShopItem[] = [
 })
 export class MattsComponent implements OnInit {
   matts: ShopItem[] = [...matts];
-  constructor() { }
+  selectedName: string;
+  selectedUrl: string;
+  constructor(private store: Store<ShopState>) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  addToCart(item: ShopItem) {
+    this.store.dispatch(new shopActions.LoadItemToCart(item));
   }
 
+  showItemDetails(name: string, imageUrl: string) {
+    this.selectedName = name;
+    this.selectedUrl = imageUrl;
+  }
 }

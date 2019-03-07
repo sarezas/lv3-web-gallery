@@ -13,6 +13,8 @@ import { ShopItem } from 'src/app/shared/shop-item.model';
 })
 export class CartComponent implements OnInit {
   cart$: Observable<ShopItem[]>;
+  selectedName: string;
+  selectedUrl: string;
   constructor(private store: Store<ShopState>) {}
 
   ngOnInit() {
@@ -21,6 +23,11 @@ export class CartComponent implements OnInit {
 
   removeItemFromDb(item: ShopItem) {
     this.store.dispatch(new shopActions.DeleteItemFromCart(item));
+  }
+
+  showItemDetails(name: string, imageUrl: string) {
+    this.selectedName = name;
+    this.selectedUrl = imageUrl;
   }
 
 }

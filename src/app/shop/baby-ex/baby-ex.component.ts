@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-
+import { ShopState } from 'src/app/shared/shop.state';
 import * as shopActions from '../../store/shop.actions';
+
 import { ShopItem } from 'src/app/shared/shop-item.model';
-import { DatabaseService } from 'src/app/services/database.service';
-import { ShopState } from '../../shared/shop.state';
 
 export const babyExs: ShopItem[] = [
   new ShopItem('Mountains', 'A hand-made wooden stand', 'https://mdbootstrap.com/img/Photos/Others/img (36).jpg', 30, 1),
@@ -21,12 +20,18 @@ export const babyExs: ShopItem[] = [
 })
 export class BabyExComponent implements OnInit {
   babyExs = [...babyExs];
-  constructor(private store: Store<ShopState> , private dbs: DatabaseService) { }
+  selectedName: string;
+  selectedUrl: string;
+  constructor(private store: Store<ShopState>) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   addToCart(item: ShopItem) {
     this.store.dispatch(new shopActions.LoadItemToCart(item));
+  }
+
+  showItemDetails(name: string, imageUrl: string) {
+    this.selectedName = name;
+    this.selectedUrl = imageUrl;
   }
 }

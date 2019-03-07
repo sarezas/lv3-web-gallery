@@ -1,15 +1,38 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="row justify-content-center mx-auto" id="card-wrapper">
-      <div class="card col-xs-3 col-sm-3 col-md-5 col-lg-5 m-2 mx-auto" style="min-width: 175.5px; min-height: 325px;"
-        *ngFor="let item of (cart$ | async).shopItems; let i = index;">
-        <img class="card-img-top img-fluid" [src]="item.imageUrl" alt="{{ item.name }}">
-        <div class="card-body">
-          <h5 class="card-title font-weight-bold" style="overflow: auto; white-space: nowrap;">{{ item.name }}</h5>
-          <p class="card-text" style="word-wrap: break-word;">{{ item.description }}</p>
-          <p class="card-text" style="word-wrap: break-word;">{{ item.price }} &euro;</p>
-          <a class="btn btn-primary btn-sm btn-rounded" (click)="removeItemFromDb(item)">Remove</a>
+  <!-- modal start-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <h6 class="modal-title" id="exampleModalLabel">{{ selectedName }}, Laukinukas &reg;</h6>
         </div>
+        <div class="modal-body">
+          <img class="img-fluid" src="{{ selectedUrl }}" alt="{{ selectedName }}">
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal end -->
+  <div class="row justify-content-center mx-auto" id="card-wrapper">
+    <div class="card col-xs-3 col-sm-3 col-md-5 col-lg-5 m-2 mx-auto" style="min-width: 175.5px; min-height: 325px;"
+      *ngFor="let item of (cart$ | async).shopItems; let i = index;">
+      <button 
+        type="button"
+        class="no-focus-outline m-0 p-0"
+        data-toggle="modal"
+        data-target="#exampleModal"
+        (click)="showItemDetails(item.name, item.imageUrl)">
+        <img class="card-img-top img-fluid" [src]="item.imageUrl" alt="{{ item.name }}">
+      </button>
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold" style="overflow: auto; white-space: nowrap;">{{ item.name }}</h5>
+        <p class="card-text" style="word-wrap: break-word;">{{ item.description }}</p>
+        <p class="card-text" style="word-wrap: break-word;">{{ item.price }} &euro;</p>
+        <a class="btn btn-primary btn-sm btn-rounded" (click)="removeItemFromDb(item)">Remove</a>
       </div>
     </div>
   </div>

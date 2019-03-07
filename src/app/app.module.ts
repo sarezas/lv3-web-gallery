@@ -7,7 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { DatabaseService } from './services/database.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
@@ -61,7 +61,12 @@ import { NavbarDirective } from './header/navbar.directive';
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
     BrowserAnimationsModule
   ],
-  providers: [DatabaseService, AngularFirestore, AngularFireDatabase],
+  providers: [
+    DatabaseService,
+    AngularFirestore,
+    AngularFireDatabase,
+    { provide: FirestoreSettingsToken, useValue: {} }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

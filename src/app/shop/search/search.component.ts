@@ -20,13 +20,18 @@ import { tBoxes } from '../t-boxes/t-boxes.component';
 })
 export class SearchComponent implements OnInit {
   shopItems: ShopItem[] = [...babyExs, ...matts, ...pillows, ...puffs, ...tBoxes, ...tents];
+  selectedName: string;
+  selectedUrl: string;
   constructor(private store: Store<ShopState>) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   addToCart(item: ShopItem) {
     this.store.dispatch(new shopActions.LoadItemToCart(item));
   }
 
+  showItemDetails(name: string, imageUrl: string) {
+    this.selectedName = name;
+    this.selectedUrl = imageUrl;
+  }
 }
