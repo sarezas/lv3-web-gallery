@@ -62,13 +62,13 @@ $desktop: 1440px;
             }
 
             @include mobile-s {
-                max-width: 253.33px;
+                width: 253.33px;
             }
             @include mobile-m {
-                max-width: 255px;
+                width: 255px;
             }
             @include mobile-l {
-                max-width: 255px;
+                width: 255px;
             }
 
             p {
@@ -92,10 +92,21 @@ $desktop: 1440px;
                     color: black;
                     border: 1px solid rgb(206, 205, 205) !important;
                 }
-    
-                #search-button:hover {
-                    color: white;
-                }
+            }
+        }
+
+        #menu-cards {
+            @include mobile-s {
+                width: 313.328px;
+                height: auto;
+            }
+            @include mobile-m {
+                width: 315px;
+                height: auto;
+            }
+            @include mobile-l {
+                width: 365px;
+                height: auto;
             }
         }
 
@@ -112,7 +123,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #pillows:hover {
+        #pillows:focus {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -131,7 +142,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #cart:hover {
+        #cart:focus {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -150,7 +161,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #search:hover {
+        #search:focus {
             content: attr(data-hover);
             background-position: 0 0;
             color: black;
@@ -170,7 +181,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #puffs:hover {
+        #puffs:focus {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -189,7 +200,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #tents:hover {
+        #tents:focus {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -208,7 +219,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #baby-ex:hover {
+        #baby-ex:focus {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -227,7 +238,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #matts:hover {
+        #matts:focus {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -246,7 +257,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #toy-boxes:hover {
+        #toy-boxes:focus {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -254,27 +265,3 @@ $desktop: 1440px;
 
     }
 }
-
-// ---------- parallax
-// .wrapper {
-//     perspective: 2px;
-//     height: 500px;
-//     overflow-x: hidden;
-//     overflow-y: auto;
-// }
-// .parallax_layer {
-//     // position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-// }
-// .parallax_layer-content {
-//     transform: translateZ(0);
-// }
-// .parallax_layer-back {
-//     justify-self: center;
-//     transform: translateZ(-1px);
-//     background-image: url('../../assets/imgs/baby-baloon.jpeg');
-//     background-repeat: no-repeat;
-// }
