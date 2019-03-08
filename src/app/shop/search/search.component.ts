@@ -22,6 +22,7 @@ export class SearchComponent implements OnInit {
   shopItems: ShopItem[] = [...babyExs, ...matts, ...pillows, ...puffs, ...tBoxes, ...tents];
   selectedName: string;
   selectedUrl: string;
+  searchTerm: string;
   constructor(private store: Store<ShopState>) { }
 
   ngOnInit() {}
