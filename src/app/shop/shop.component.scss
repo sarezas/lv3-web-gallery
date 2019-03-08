@@ -61,6 +61,16 @@ $desktop: 1440px;
                 box-shadow: none;
             }
 
+            @include mobile-s {
+                max-width: 253.33px;
+            }
+            @include mobile-m {
+                max-width: 255px;
+            }
+            @include mobile-l {
+                max-width: 255px;
+            }
+
             p {
                 @include mobile-s {
                     padding: 0px 0px !important;
