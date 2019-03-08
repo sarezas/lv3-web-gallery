@@ -1,9 +1,23 @@
 $btn-color: rgb(49, 174, 212);
 $mobile-s: 320px;
+$mobile-m: 375px;
+$mobile-l: 425px;
 $tablet: 768px;
 
 @mixin mobile-s {
   @media (min-width: #{mobile-s}) {
+      @content;
+  }
+}
+
+@mixin mobile-m {
+  @media (min-width: #{mobile-m}) {
+      @content;
+  }
+}
+
+@mixin mobile-l {
+  @media (min-width: #{mobile-l}) {
       @content;
   }
 }
@@ -29,14 +43,32 @@ nav.navbar {
       transition: .3s ease-in;
     }
 
-    img#introText {
-      @include tablet {
-        width: 400px;
-        height: 45px;   
+    #navbarText {
+      margin-top: -12vh;
+      margin-left: 14vw;
+      justify-content: center;
+
+      @include mobile-s {
+        margin-top: 20px !important;
+        margin-left: 35px;
+      }
+
+      a#telephone {
+        margin-top: 0;
+        margin-bottom: 2.5vh;
+      }
+      
+      @include mobile-l {
+        background-color: red;
+        margin-top: 20px;
+        margin-left: 55px;
       }
     }
     
     .navbar-text {
+      a.nav-link {
+        font-size: 6.8vw;
+      }
 
       #introSocial {
         .hidden {
@@ -46,36 +78,58 @@ nav.navbar {
 
       .nav-link {
         #telephone, #email, #fb, #instagram, #pinterest {
-          opacity: .8;
-          transition: opacity .2s ease-in;
-          font-size: 1.2rem;
+          transition: color .2s ease-in;
+          font-size: 1rem;
         }
         #telephone:hover, #email:hover, #fb:hover, #instagram:hover, #pinterest:hover {
           text-decoration: none;
           color: $btn-color;
-          opacity: 1;
         }
       }
 
       #introSocial {
-        opacity: .8;
-        transition: opacity .2s ease-in;
+        transition: color .2s ease-in;
         color: rgb(82, 120, 144);
         position: relative;
 
         &:hover {
           color: $btn-color !important;
-          opacity: 1;
-
-            .hidden {
+            .hidden-contacts {
               position: absolute;
               display: flex;
-              flex-direction: column;
-              top: 100%;
-              left: -7px;
-              right: -7px;
-              padding: 15px;
+              flex-direction: row;
+              left: -6vh;
+              top: 9vh;
+              margin-left: 10vw;
               z-index: 2;
+              font-size: 1rem;
+
+              a#telephone, a#email {
+                margin-right: 4vw;
+                padding: 1vw;
+                font-size: .8rem;
+              }
+
+              a#email {
+                margin-left: 4vw;
+                padding: 1vw;
+                font-size: .8rem;
+              }
+            }  
+
+            .hidden-social {
+              position: absolute;
+              display: flex;
+              flex-direction: row;
+              left: 7px;
+              margin-left: 10vw;
+              z-index: 2;
+              font-size: 1rem;
+
+              a#fb, a#instagram, a#pinterest {
+                margin: 2vw;
+                font-size: 1rem;
+              }
             }
         }
       }
