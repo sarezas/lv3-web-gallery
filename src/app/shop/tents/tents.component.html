@@ -1,35 +1,44 @@
 <div class="container">
-  <!-- modal start-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header justify-content-center">
-          <h6 class="modal-title" id="exampleModalLabel">{{ selectedName }}, Laukinukas &reg;</h6>
-        </div>
-        <div class="modal-body">
-          <img class="img-fluid" src="{{ selectedUrl }}" alt="{{ selectedName }}">
-        </div>
-        <div class="modal-footer justify-content-center">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <!-- modal start-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+            <h6 class="modal-title" id="exampleModalLabel">{{ selectedName }}, Laukinukas &copy;</h6>
+          </div>
+          <div class="modal-body mx-auto">
+            <img class="img-fluid" src="{{ selectedUrl }}" alt="{{ selectedName }}">
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- modal end -->
-  <div class="row justify-content-center mx-auto" id="card-wrapper">
-    <div class="card col-xs-3 col-sm-3 col-md-4 col-lg-4 col-xl-4 my-2 mx-2"
-      style="max-width: 250px; max-height: 350px;" *ngFor="let item of tents; let i = index;">
-      <button type="button" class="no-focus-outline m-0 p-0" data-toggle="modal" data-target="#exampleModal"
-        (click)="showItemDetails(item.name, item.imageUrl)">
-        <img class="card-img-top img-fluid" [src]="item.imageUrl" alt="{{ item.name }}">
-      </button>
-      <div class="card-body">
-        <h5 class="card-title font-weight-bold" style="overflow: auto; white-space: nowrap;">{{ item.name }}</h5>
-        <p class="card-text" style="word-wrap: break-word;">{{ item.description }}</p>
-        <p class="card-text" style="word-wrap: break-word;">{{ item.price }} &euro;</p>
-        <a class="btn btn-primary btn-sm btn-rounded" (click)="removeItemFromDb(item)">Remove</a>
+    <!-- modal end -->
+    <!-- card start -->
+    <div class="container">
+      <div class="row justify-content-center mx-auto d-flex flex-row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 mx-auto mb-3 d-flex align-items-stretch"
+          *ngFor="let item of tents; let i = index;"
+          style="min-width: 253.33px;">
+          <div class="card-content" >
+            <div class="card-img">
+              <button type="button" class="no-focus-outline m-0 p-0" data-toggle="modal" data-target="#exampleModal"
+                (click)="showItemDetails(item.name, item.imageUrl)">
+                <img class="card-img-top img-fluid" [src]="item.imageUrl" alt="{{ item.name }}" style="min-height: 148.97px;">
+              </button>
+            </div>
+            <div class="card-desc">
+              <h3>{{ item.name }}</h3>
+              <p>{{ item.description }}</p>
+              <p>{{ item.price }} &euro;</p>
+              <a class="btn btn-card" (click)="addToCart(item)">Add to cart</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- card end -->
   </div>
-</div>

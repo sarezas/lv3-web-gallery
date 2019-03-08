@@ -1,0 +1,52 @@
+@mixin gradient-linear(
+    $color1, 
+    $color2: $color1,
+    $color3: $color1,
+    $color4: $color1,
+    $color5: $color1,
+    $color6: $color1,
+    $color7: $color1,
+    $color8: $color1
+) {
+    background-color: $color1; /* Old browsers */
+    background-image: -moz-linear-gradient(left, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%, 
+        $color6 62.5%, $color7 75%, $color8 87.5%,  $color1 100%); /* FF3.6-15 */
+    background-image: -webkit-linear-gradient(left, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%,
+        $color6 62.5%, $color7 85.5%, $color8 87.5%,  $color1 100%); /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(to right, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%,
+        $color6 62.5%, $color7 75%, $color8 87.5%,  $color1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@keyframes gradientAnim {
+    0%   { background-position: -5% 0; }
+    100% { background-position: 105% 0; }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#wrapper-app {
+    background-repeat: repeat-y;
+    overflow: visible;
+    z-index: -1;
+
+    // @include gradient-linear(#f0e6e6, #dac8e4, #d6c5f1, #c3e8ec, #d0eec4, #ffcccc, #f1f1b3, #ecc5c5);
+    // @include gradient-linear(#f5f0e6,  #c3e8ec, #d0eec4, #f0f0c6, #f0d2d2);
+
+    background-size: 2000% 400%;
+    background-position: 0 0;
+
+    animation-name: gradientAnim;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+    animation-duration: 240s;
+    animation-timing-function: linear;
+    }
+
+    // h1 {
+    // color: #fff;
+    // font-family: 'Segoe UI', 'San Franscisco', Calibri, Helvetica, Arial, sans-serif;
+    // font-weight: 100;
+    // font-size: calc(100% + 5vmax);
+    // }
