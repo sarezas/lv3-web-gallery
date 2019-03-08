@@ -6,11 +6,11 @@ import * as shopActions from '../../store/shop.actions';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 export const tents: ShopItem[] = [
-  new ShopItem('Creme Tent', 'A spacious fort for kids',
+  new ShopItem('Creme Tent', 'A spacious, creme-colored fort for kids',
     '../../../assets/imgs/tents/tent-creme.png', 90, 21),
-  new ShopItem('Grey Zig-zag Dot Tent', 'A cubic busa tent for every kid',
+  new ShopItem('Grey Zig-zag Tent', 'A cubic busa tent for every child',
     '../../../assets/imgs/tents/tent-light-grey.png', 90, 22),
-  new ShopItem('Dark Grey Tent', 'A girly tent',
+  new ShopItem('Dark Grey Tent', 'A tent with side roof windows',
     '../../../assets/imgs/tents/tent-grey.png', 90, 23),
   new ShopItem('Black Tent', 'A spacious tent for kids',
     '../../../assets/imgs/tents/tent-black.png', 90, 24),

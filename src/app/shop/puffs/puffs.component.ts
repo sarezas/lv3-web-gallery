@@ -6,11 +6,11 @@ import * as shopActions from '../../store/shop.actions';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 export const puffs: ShopItem[] = [
-  new ShopItem('Yellow Zig-zag Puff', 'A yellow and white zig-zag puff',
+  new ShopItem('Yellow Zig-zag', 'A soft yellow and white zig-zag puff',
   '../../../assets/imgs/puffs/puff-double-yellow.jpg', 19, 12),
-new ShopItem('Grey Zig-zag Puff', 'A grey zig-zag puff',
+new ShopItem('Grey Stars', 'A soft grey puff with white stars',
   '../../../assets/imgs/puffs/puff-dark-grey.jpg', 19, 13),
-new ShopItem('Grey Stars Puff', 'A grey-starred puff',
+new ShopItem('Grey Zig-zag', 'A grey zig-zag puff with white stripes',
   '../../../assets/imgs/puffs/puff-light-grey.jpg', 19, 14)
 ];
 

@@ -6,17 +6,17 @@ import * as shopActions from '../../store/shop.actions';
 import { ShopItem } from 'src/app/shared/shop-item.model';
 
 export const pillows: ShopItem[] = [
-  new ShopItem('Deco Star Pillow', 'A cotton pillow for adults',
+  new ShopItem('Star Pillow', 'A cotton grey pillow with white stars',
     '../../../assets/imgs/pillows/pillow-star.jpg', 7, 6),
-  new ShopItem('Deco Cloud Pillow', 'A linen blue material for optimum baby comfort',
+  new ShopItem('Cloud Pillow', 'A linen blue material for optimum baby comfort',
     '../../../assets/imgs/pillows/pillow-cloud-blue.jpg', 7, 7),
-  new ShopItem('Deco Pompom Pillow', 'A girly pillow',
+  new ShopItem('Pompom Pillow', 'A cotton pink pillow with a button',
     '../../../assets/imgs/pillows/pillow-pink-pompom.jpg', 8, 8),
-  new ShopItem('Deco Pillow With Button', 'A linen blue material for optimum baby comfort',
+  new ShopItem('Middle Button', 'A linen blue material for optimum baby comfort',
     '../../../assets/imgs/pillows/pillow-blue-zigzag.jpg', 10, 9),
-  new ShopItem('Deco Pillow With Button And Pompom', 'A cotton pillow for adults',
+  new ShopItem('Button And Pompom', 'A cotton pillow for adults',
     '../../../assets/imgs/pillows/pillow-grey-stars.png', 12, 10),
-  new ShopItem('Deco Owal Pillow', 'A girly pillow',
+  new ShopItem('Owal Pillow', 'An owal-shaped pillow with side mane',
     '../../../assets/imgs/pillows/pillow-grey.png', 7, 11)
 ];
 

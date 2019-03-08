@@ -10,8 +10,10 @@ export const babyExs: ShopItem[] = [
     '../../../assets/imgs/babyEx/babyEx-matt-stars.jpg', 28, 1),
   new ShopItem('Exercise Stand', 'A natural wooden hand-made stand',
     '../../../assets/imgs/babyEx/babyEx-pink.jpg', 30, 2),
-  new ShopItem('Mountains 2', 'A hand-made wooden stand', 'https://mdbootstrap.com/img/Photos/Others/img (36).jpg', 40, 3),
-  new ShopItem('Chill Dude', 'A blue star play matt', 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Reeipublic_Banana.gif', 45, 4)
+  new ShopItem('Mount Example', 'A majestic view of some beautiful mountains',
+    'https://mdbootstrap.com/img/Photos/Others/img (36).jpg', 40, 3),
+  new ShopItem('Chill Dude', 'A truly relaxed banana wearing sunglasses',
+    'https://upload.wikimedia.org/wikipedia/commons/e/e2/Reeipublic_Banana.gif', 45, 4)
 ];
 
 @Component({
