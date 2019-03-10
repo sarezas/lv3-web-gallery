@@ -11,6 +11,7 @@ import { tents } from '../tents/tents.component';
 import { pillows } from '../pillows/pillows.component';
 import { puffs } from '../puffs/puffs.component';
 import { tBoxes } from '../t-boxes/t-boxes.component';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-search',
@@ -23,7 +24,10 @@ export class SearchComponent implements OnInit {
   selectedName: string;
   selectedUrl: string;
   searchTerm: string;
-  constructor(private store: Store<ShopState>) { }
+  private readonly notifier: NotifierService;
+  constructor(private store: Store<ShopState>, private notifierService: NotifierService) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {}
 

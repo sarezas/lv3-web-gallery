@@ -1,5 +1,7 @@
 $btn-color: rgb(49, 174, 212);
+
 $mobile-s: 320px;
+$samsung-s5: 360px;
 $mobile-m: 375px;
 $mobile-l: 425px;
 $tablet: 768px;
@@ -10,6 +12,12 @@ $desktop: 1440px;
     @media (min-width: #{$mobile-s}) {
         @content;
     }
+}
+
+@mixin samsung-s5 {
+  @media (min-width: #{$samsung-s5}) {
+      @content;
+  }
 }
 
 @mixin mobile-m {
@@ -80,23 +88,28 @@ nav.navbar {
         position: relative;
 
         @include mobile-s {
-          top: -5vh;
-          margin: 0 25px;
+          top: -3.5vh;
+          margin: 5px 20px;
+        }
+        @include samsung-s5 {
+          left: 8vw;
         }
         @include mobile-m {
-          top: -5vh;
+          top: -3.5vh;
           left: 7vw;
         }
         @include mobile-l {
-          top: -5vh;
+          top: -3.5vh;
           left: 11vw;
         }
         @include tablet {
-          // background-color: coral;
           top: 0;
           left: 0;
           right: 0;
           padding: 0;
+        }
+        @include desktop {
+          font-size: 1.3rem;
         }
 
         .hidden {
@@ -109,17 +122,22 @@ nav.navbar {
               @include mobile-s {
                 display: block;
                 position: absolute;
-                top: -9vh;
-                left: 19vw;
+                top: -7.5vh;
+                left: 21vw;
     
                 a#telephone, a#email {
                   font-size: .8rem;
+                  margin: 2px 2px;
+                  padding: 2px 2px;
                 }
+              }
+              @include samsung-s5 {
+                left: 17vw;
               }
               @include mobile-m {
                 display: block;
                 position: absolute;
-                top: -9vh;
+                top: -6.5vh;
                 left: 19vw;
     
                 a#telephone, a#email {
@@ -129,7 +147,7 @@ nav.navbar {
               @include mobile-l {
                 display: block;
                 position: absolute;
-                top: -9vh;
+                top: -6.5vh;
                 left: 19vw;
     
                 a#telephone, a#email {
@@ -153,8 +171,13 @@ nav.navbar {
                 left: 0vw;
     
                 a#telephone, a#email {
-                  font-size: .8rem;
+                  font-size: .9rem;
                 }
+              }
+              @include desktop {
+                top: 3vh;
+                margin: 10px 10px;
+                padding: 5px 5px;
               }
             }
 
@@ -162,18 +185,18 @@ nav.navbar {
               @include mobile-s {
                 display: block;
                 position: absolute;
-                top: -7vh;
-                left: -26vw;
+                top: -5vh;
+                left: -21vw;
     
                 a#fb, a#instagram, a#pinterest {
                   font-size: .8rem;
-                  margin: 20px 10px;
+                  margin: 10px 10px;
                 }
               }
               @include mobile-m {
                 display: block;
                 position: absolute;
-                left: -20vw;
+                left: -18vw;
 
                 a#fb, a#instagram, a#pinterest {
                   font-size: .8rem;
@@ -205,12 +228,14 @@ nav.navbar {
                 left: 1vw;
     
                 a#fb, a#instagram, a#pinterest {
-                  font-size: .8rem;
+                  font-size: 1rem;
+                  margin: 10px 10px;
                 }
               }
               @include desktop {
                 left: 0.5vw;
-            }
+                top: 3vh;
+              }
           }
         }
       }

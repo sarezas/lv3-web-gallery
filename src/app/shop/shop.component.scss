@@ -49,17 +49,62 @@ $desktop: 1440px;
     height: auto;
 
     #menu {
-
-    	// box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-
         .menu-item {
-            display: flex;
             justify-content: center;
-            border: 2px solid rgb(206, 189, 141);
-            border-radius: 5px;
+            color: cornsilk;
             overflow: auto;
             white-space: nowrap;
+            // -----------
+            outline: none;
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            border-bottom: solid 4px #627295;
 
+            &:active {
+                -ms-transform: translateY(4px);
+                -webkit-transform: translateY(4px);
+                transform: translateY(4px); /* Move down */
+                box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2); /* Reduce Shadow */
+                border-bottom: none;
+            }
+            &:hover {
+                color: rgb(24, 22, 22);
+                border-bottom: solid 4px #627295;
+                // box-shadow: 0 1px 1px 0 #627295;
+            }
+
+            #button-text {
+                margin: 10px 10px;
+                padding: 10px 10px;
+                font-size: 18px;
+
+                @include mobile-s {
+                    margin: 2px 2px;
+                    padding: 2px 2px;
+                    font-size: 12px;
+                }
+                @include mobile-m {
+                    margin: 2px 2px;
+                    padding: 2px 2px;
+                    font-size: 12px;
+                }
+                @include mobile-l {
+                    margin: 2px 2px;
+                    padding: 2px 2px;
+                    font-size: 12px;
+                }
+                @include tablet {
+                    margin: 10px 10px;
+                    padding: 10px 10px;
+                    font-size: 16px;
+                }
+                @include desktop {
+                    margin: 10px 10px;
+                    padding: 10px 10px;
+                    font-size: 18px;
+                }
+            }
             &:active, &:focus {
                 outline: none !important;
                 box-shadow: none;
@@ -69,216 +114,43 @@ $desktop: 1440px;
                 width: 253.33px;
             }
             @include mobile-m {
-                width: 255px;
+                width: 253.33px;
             }
             @include mobile-l {
-                width: 255px;
-            }
-
-            p {
-                @include mobile-s {
-                    padding: 0px 0px !important;
-                }
-                @include tablet {
-                    padding: 10px 10px !important;
-                }
-            }
-    
-            p {
-                margin: 10px 10px;
-                padding: 10px 10px;
-            }
-
-            #search-bar {
-                #search-button {
-                    color: black;
-                    border: 1px solid rgb(206, 205, 205) !important;
-                }
-            }
-
-            #button-text {
-                border: none;
-                font-size: 18px;
-                justify-items: center;
-                align-items: center;
-
-                @include tablet {
-                    font-size: 16px;
-                }
-            }
-        }
-
-        #menu-cards {
-            @include mobile-s {
-                width: 313.328px;
-                height: auto;
-            }
-            @include mobile-m {
-                width: 315px;
-                height: auto;
-            }
-            @include mobile-l {
-                width: 365px;
-                height: auto;
+                width: 253.33px;
             }
         }
 
         #pillows {
             background: rgb(189, 109, 255);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                #f846bd 50%,
-                #ce2997);
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #pillows:focus, *:active, *:hover {
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
         }
-
         #cart {
             background: rgb(32, 99, 161);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                rgb(247, 60, 69) 50%,
-                rgb(216, 33, 42));
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #cart:focus, *:active, *:hover {
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
         }
+        
 
         #search {
-            background: rgb(61, 59, 187);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                rgb(247, 125, 89) 50%,
-                rgb(231, 96, 54));
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #search:focus, *:active, *:hover {
-            content: attr(data-hover);
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
+            background: rgb(85, 75, 177);
         }
 
         #puffs {
             background: rgb(82, 211, 189);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                rgb(231, 148, 54) 50%,
-                rgb(231, 96, 54));
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #puffs:focus, *:active, *:hover {
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
         }
 
         #tents {
             background: rgb(52, 219, 80);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                rgb(59, 207, 121) 50%,
-                rgb(17, 172, 82));
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #tents:focus, *:active, *:hover {
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
         }
 
         #baby-ex {
-            background: rgb(247, 243, 16);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                rgb(255, 4, 4) 50%,
-                rgb(185, 38, 38));
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #baby-ex:focus, *:active, *:hover {
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
+            background: rgb(152, 180, 24);
         }
 
         #matts {
             background: rgb(255, 88, 37);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                rgb(73, 243, 255) 50%,
-                rgb(42, 190, 201));
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #matts:focus, *:active, *:hover {
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
         }
 
         #toy-boxes {
-            background: rgb(216, 0, 0);
-            color:white;
-            background-image: linear-gradient(to left,
-                transparent,
-                transparent 50%,
-                rgb(39, 201, 39) 50%,
-                rgb(45, 218, 22));
-            background-position: 100% 0;
-                background-size: 200% 100%;
-                transition: all .25s ease-in;
-                
-            }
-        #toy-boxes:focus, *:active, *:hover {
-            background-position: 0 0;
-            color: black;
-            border: 2px solid black;
+            background: rgb(216, 49, 49);
         }
-
     }
-
-    // #menu-cards {
-    //     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-    // }
 }

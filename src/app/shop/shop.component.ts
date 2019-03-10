@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ShopState } from 'src/app/shared/shop.state';
 import { Observable } from 'rxjs';
-// import * as firebase from 'firebase';
-// import * as shopActions from '../store/shop.actions';
-// import { AngularFireDatabase } from '@angular/fire/database';
-// import { ShopItem } from '../shared/shop-item.model';
-
 
 @Component({
   selector: 'app-shop',
@@ -22,4 +17,9 @@ export class ShopComponent implements OnInit {
     this.cart$ = this.store.select('shop');
   }
 
+  scrollToView(el: HTMLElement) {
+    setTimeout(() => {
+      el.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }, 300);
+  }
 }

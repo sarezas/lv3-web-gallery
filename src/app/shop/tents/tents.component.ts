@@ -27,11 +27,10 @@ export const tents: ShopItem[] = [
   styleUrls: ['./tents.component.scss']
 })
 export class TentsComponent implements OnInit {
-  private readonly notifier: NotifierService;
-  // notificationShow: true;
   tents: ShopItem[] = [...tents];
   selectedName: string;
   selectedUrl: string;
+  private readonly notifier: NotifierService;
   constructor(private store: Store<ShopState>, private notifierService: NotifierService) {
     this.notifier = notifierService;
   }
@@ -42,7 +41,6 @@ export class TentsComponent implements OnInit {
     this.store.dispatch(new shopActions.LoadItemToCart(item));
     this.notifier.notify('success',
       'Thanks for putting items into the storage, each week our team will try to synchronize our factory stock with it!');
-    // this.notificationShow = false;
   }
 
   showItemDetails(name: string, imageUrl: string) {

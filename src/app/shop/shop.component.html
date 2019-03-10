@@ -2,28 +2,28 @@
   <div class="container justify-content-center mx-auto">
     <div class="row justify-content-center mx-auto" id="shop-img-wrapper">
       <div class="col-12 justify-content-center mx-auto">
-        <img class="img-fluid" src="../../assets/imgs/store-2.png">
+        <img class="img-fluid" id="store-image" src="../../assets/imgs/store-2.png">
       </div>
     </div>
     <div class="container">
       <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row" id="menu">
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['/baby-ex']" id="baby-ex">
+              justify-content-center menu-item" [routerLink]="['/baby-ex']" id="baby-ex" (click)="scrollToView(focus)">
           <p id="button-text">baby ex.</p>
         </button>
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['cart']" id="cart">
+              justify-content-center menu-item" [routerLink]="['cart']" id="cart" (click)="scrollToView(focus)">
           <p id="button-text">
             storage:
             <span class="badge badge-light">{{ (cart$ | async).itemCount }}</span>
           </p>
         </button>
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['matts']" id="matts">
+              justify-content-center menu-item" [routerLink]="['matts']" id="matts" (click)="scrollToView(focus)">
           <p id="button-text">matts</p>
         </button>
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['search']" id="search">
+              justify-content-center menu-item" [routerLink]="['search']" id="search" (click)="scrollToView(focus)">
           <p id="button-text">
             search
             <i class="fas fa-search"></i>
@@ -32,19 +32,19 @@
       </div>
       <div class="row justify-content-center align-items-center mx-auto d-flex flex-column flex-sm-row" id="menu">
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['pillows']" id="pillows">
+              justify-content-center menu-item" [routerLink]="['pillows']" id="pillows" (click)="scrollToView(focus)">
           <p id="button-text">pillows</p>
         </button>
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['puffs']" id="puffs">
+              justify-content-center menu-item" [routerLink]="['puffs']" id="puffs" (click)="scrollToView(focus)">
           <p id="button-text">puffs</p>
         </button>
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['t-boxes']" id="toy-boxes">
+              justify-content-center menu-item" [routerLink]="['t-boxes']" id="toy-boxes" (click)="scrollToView(focus)">
           <p id="button-text">t-boxes</p>
         </button>
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1
-              justify-content-center menu-item" [routerLink]="['tents']" id="tents">
+              justify-content-center menu-item" [routerLink]="['tents']" id="tents" (click)="scrollToView(focus)">
           <p id="button-text">tents</p>
         </button>
       </div>
@@ -52,7 +52,7 @@
     <!-- </div> -->
   </div>
   <hr>
-  <div class="row justify-content-center mx-auto" id="menu-cards">
+  <div class="row justify-content-center mx-auto" id="menu-cards" #focus>
     <router-outlet></router-outlet>
   </div>
   <hr>

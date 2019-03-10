@@ -31,6 +31,7 @@ import { FilterPipe } from './shop/filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarDirective } from './header/navbar.directive';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { AutofocusDirective } from './shop/autofocus.directive';
 
 const notifierDefaultOptions: NotifierOptions = {
   position: {
@@ -89,7 +90,8 @@ const notifierDefaultOptions: NotifierOptions = {
     CarouselComponent,
     SearchComponent,
     FilterPipe,
-    NavbarDirective
+    NavbarDirective,
+    AutofocusDirective
   ],
   imports: [
     BrowserModule,

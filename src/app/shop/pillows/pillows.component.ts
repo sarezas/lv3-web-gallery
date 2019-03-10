@@ -4,6 +4,7 @@ import { ShopState } from 'src/app/shared/shop.state';
 import * as shopActions from '../../store/shop.actions';
 
 import { ShopItem } from 'src/app/shared/shop-item.model';
+import { NotifierService } from 'angular-notifier';
 
 export const pillows: ShopItem[] = [
   new ShopItem('Star Pillow', 'A cotton grey pillow with white stars',
@@ -29,7 +30,10 @@ export class PillowsComponent implements OnInit {
   pillows: ShopItem[] = [...pillows];
   selectedName: string;
   selectedUrl: string;
-  constructor(private store: Store<ShopState>) { }
+  private readonly notifier: NotifierService;
+  constructor(private store: Store<ShopState>, private notifierService: NotifierService) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {}
 

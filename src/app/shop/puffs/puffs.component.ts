@@ -4,6 +4,7 @@ import { ShopState } from 'src/app/shared/shop.state';
 import * as shopActions from '../../store/shop.actions';
 
 import { ShopItem } from 'src/app/shared/shop-item.model';
+import { NotifierService } from 'angular-notifier';
 
 export const puffs: ShopItem[] = [
   new ShopItem('Yellow Zig-zag', 'A soft yellow and white zig-zag puff',
@@ -23,7 +24,10 @@ export class PuffsComponent implements OnInit {
   puffs: ShopItem[] = [...puffs];
   selectedName: string;
   selectedUrl: string;
-  constructor(private store: Store<ShopState>) { }
+  private readonly notifier: NotifierService;
+  constructor(private store: Store<ShopState>, private notifierService: NotifierService) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {}
 
