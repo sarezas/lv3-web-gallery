@@ -81,6 +81,11 @@
   }
 }
 
+#shop-wrapper #menu .menu-item #button-text #store-count {
+  border-radius: 10px;
+  border-bottom: solid 4px #627295;
+}
+
 #shop-wrapper #menu .menu-item:active, #shop-wrapper #menu .menu-item:focus {
   outline: none !important;
   -webkit-box-shadow: none;

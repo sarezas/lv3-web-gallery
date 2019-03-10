@@ -15,7 +15,7 @@
               justify-content-center menu-item" [routerLink]="['cart']" id="cart" (click)="scrollToView(focus)">
           <p id="button-text">
             storage:
-            <span class="badge badge-light">{{ (cart$ | async).itemCount }}</span>
+            <span class="badge badge-light" id="store-count">{{ (cart$ | async).itemCount }}</span>
           </p>
         </button>
         <button class="btn col-xs-2 col-sm-2 col-md-2 col-lg-2 col-sm-offset-1 col-md-offset-2 m-1 p-1

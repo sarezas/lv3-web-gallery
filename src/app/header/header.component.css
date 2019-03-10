@@ -160,6 +160,7 @@ nav.navbar .navbar-text #introSocial:hover {
 @media (min-width: 1440px) {
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
     top: 3vh;
+    margin: 2.5px 2.5px;
   }
 }
 
@@ -227,6 +228,7 @@ nav.navbar .navbar-text #introSocial:hover {
   nav.navbar .navbar-text #introSocial:hover .hidden-social {
     left: 0.5vw;
     top: 3vh;
+    margin: 5px 5px;
   }
 }
 /*# sourceMappingURL=header.component.css.map */

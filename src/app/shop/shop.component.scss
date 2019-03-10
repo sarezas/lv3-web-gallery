@@ -105,6 +105,10 @@ $desktop: 1440px;
                     padding: 10px 10px;
                     font-size: 18px;
                 }
+                #store-count {
+                    border-radius: 10px;
+                    border-bottom: solid 4px #627295;
+                }
             }
             &:active, &:focus {
                 outline: none !important;
