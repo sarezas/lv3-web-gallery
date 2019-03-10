@@ -160,8 +160,6 @@ nav.navbar .navbar-text #introSocial:hover {
 @media (min-width: 1440px) {
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
     top: 3vh;
-    margin: 10px 10px;
-    padding: 5px 5px;
   }
 }
 

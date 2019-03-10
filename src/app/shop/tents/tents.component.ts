@@ -39,7 +39,7 @@ export class TentsComponent implements OnInit {
 
   addToCart(item: ShopItem) {
     this.store.dispatch(new shopActions.LoadItemToCart(item));
-    this.notifier.notify('success',
+    this.notifier.notify('info',
       'Thanks for putting items into the storage, each week our team will try to synchronize our factory stock with it!');
   }
 
