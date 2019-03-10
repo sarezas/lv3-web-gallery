@@ -93,7 +93,7 @@ nav.navbar .navbar-text #introSocial:hover {
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
     display: block;
     position: absolute;
-    top: -7.5vh;
+    top: -7.8vh;
     left: 21vw;
   }
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {

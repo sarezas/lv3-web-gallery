@@ -3,7 +3,7 @@ $btn-color: rgb(49, 174, 212);
 $mobile-s: 320px;
 $samsung-s5: 360px;
 $mobile-m: 375px;
-$mobile-l: 425px;
+$mobile-l: 414px;
 $tablet: 768px;
 $laptop: 1024px;
 $desktop: 1440px;
@@ -122,7 +122,7 @@ nav.navbar {
               @include mobile-s {
                 display: block;
                 position: absolute;
-                top: -7.5vh;
+                top: -8vh;
                 left: 21vw;
     
                 a#telephone, a#email {
@@ -132,13 +132,14 @@ nav.navbar {
                 }
               }
               @include samsung-s5 {
+                top: -6.65vh;
                 left: 17vw;
               }
               @include mobile-m {
                 display: block;
                 position: absolute;
                 top: -6.5vh;
-                left: 19vw;
+                left: 17vw;
     
                 a#telephone, a#email {
                   font-size: .8rem;
@@ -147,7 +148,7 @@ nav.navbar {
               @include mobile-l {
                 display: block;
                 position: absolute;
-                top: -6.5vh;
+                top: -6vh;
                 left: 19vw;
     
                 a#telephone, a#email {
