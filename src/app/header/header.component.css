@@ -59,7 +59,7 @@ nav.navbar .navbar-text #introSocial {
   }
 }
 
-@media (min-width: 425px) {
+@media (min-width: 414px) {
   nav.navbar .navbar-text #introSocial {
     top: -3.5vh;
     left: 11vw;
@@ -93,7 +93,7 @@ nav.navbar .navbar-text #introSocial:hover {
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
     display: block;
     position: absolute;
-    top: -7.8vh;
+    top: -8vh;
     left: 21vw;
   }
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
@@ -105,6 +105,7 @@ nav.navbar .navbar-text #introSocial:hover {
 
 @media (min-width: 360px) {
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    top: -6.65vh;
     left: 17vw;
   }
 }
@@ -114,18 +115,18 @@ nav.navbar .navbar-text #introSocial:hover {
     display: block;
     position: absolute;
     top: -6.5vh;
-    left: 19vw;
+    left: 17vw;
   }
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
     font-size: .8rem;
   }
 }
 
-@media (min-width: 425px) {
+@media (min-width: 414px) {
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
     display: block;
     position: absolute;
-    top: -6.5vh;
+    top: -6vh;
     left: 19vw;
   }
   nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
@@ -188,7 +189,7 @@ nav.navbar .navbar-text #introSocial:hover {
   }
 }
 
-@media (min-width: 425px) {
+@media (min-width: 414px) {
   nav.navbar .navbar-text #introSocial:hover .hidden-social {
     display: block;
     position: absolute;

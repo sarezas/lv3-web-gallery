@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import { Store } from '@ngrx/store';
 import { ShopState } from 'src/app/shared/shop.state';
 import { ShopItem } from 'src/app/shared/shop-item.model';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,10 @@ export class CartComponent implements OnInit {
   cart$: Observable<ShopItem[]>;
   selectedName: string;
   selectedUrl: string;
-  constructor(private store: Store<ShopState>) {}
+  private readonly notifier: NotifierService;
+  constructor(private store: Store<ShopState>, private notifierService: NotifierService) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {
     this.cart$ = this.store.select('shop');
@@ -23,6 +27,8 @@ export class CartComponent implements OnInit {
 
   removeItemFromDb(item: ShopItem) {
     this.store.dispatch(new shopActions.DeleteItemFromCart(item));
+    this.notifier.notify('warning',
+      'Item removed');
   }
 
   showItemDetails(name: string, imageUrl: string) {
