@@ -46,8 +46,11 @@ $desktop: 1440px;
     margin: 0 0;
     font-family: 'Cabin Sketch', normal;
     max-width: 850px;
-    min-height: 55px;
     height: auto;
+
+    #menu-cards {
+        min-height: 55px;
+    }
 
     #menu {
         .menu-item {
