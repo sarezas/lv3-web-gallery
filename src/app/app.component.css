@@ -1,1 +1,51 @@
-/* No CSS *//*# sourceMappingURL=app.component.css.map */
+@-webkit-keyframes gradientAnim {
+  0% {
+    background-position: -5% 0;
+  }
+  100% {
+    background-position: 105% 0;
+  }
+}
+
+@keyframes gradientAnim {
+  0% {
+    background-position: -5% 0;
+  }
+  100% {
+    background-position: 105% 0;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#wrapper-app {
+  width: 100% vw;
+  height: auto;
+  background-repeat: repeat-y;
+  overflow: visible;
+  z-index: -1;
+  /* Old browsers */
+  background-color: #f3f0eb;
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-image: -webkit-gradient(linear, left top, right top, from(#f3f0eb), color-stop(12.5%, #d7ecee), color-stop(25%, #e1eedd), color-stop(37.5%, #ececd8), color-stop(50%, #f0dfdf));
+  background-image: linear-gradient(to right, #f3f0eb 0%, #d7ecee 12.5%, #e1eedd 25%, #ececd8 37.5%, #f0dfdf 50%);
+  background-size: 2000% 400%;
+  background-position: 0 0;
+  -webkit-animation-name: gradientAnim;
+          animation-name: gradientAnim;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-duration: 240s;
+          animation-duration: 240s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  scroll-behavior: smooth;
+}
+/*# sourceMappingURL=app.component.css.map */

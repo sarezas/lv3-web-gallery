@@ -1,1 +1,48 @@
-/* No CSS *//*# sourceMappingURL=footer.component.css.map */
+ul.list-group {
+  list-style: none;
+}
+
+ul.list-group .list-item {
+  font-size: .8rem;
+}
+
+#footnote {
+  font-size: .7rem;
+}
+
+#footer-topic {
+  font-family: "Cabin Sketch", normal;
+  font-size: 18px;
+}
+
+#dev-signature {
+  display: inline-block;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#cash-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#cash-cards .fab.fa-cc-visa {
+  color: #ffe600;
+  font-size: .8rem;
+}
+
+#cash-cards .fab.fa-cc-mastercard {
+  color: #06d306;
+  font-size: .8rem;
+}
+
+#cash-cards .fas.fa-globe-americas {
+  color: #f11809;
+  font-size: .8rem;
+}
+/*# sourceMappingURL=footer.component.css.map */

@@ -7,7 +7,7 @@ ul.list-group  {
 }
 
 #footnote {
-    font-size: .8rem;
+    font-size: .7rem;
 }
 
 #footer-topic {
@@ -15,7 +15,8 @@ ul.list-group  {
     font-size: 18px;
 }
 #dev-signature {
-    display: flex;
+    // display: flex;
+    display: inline-block;
     justify-content: flex-start;
     // align-content: flex-start;
 }

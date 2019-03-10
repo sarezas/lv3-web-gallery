@@ -1,1 +1,139 @@
-/* No CSS *//*# sourceMappingURL=shop.component.css.map */
+#shop-wrapper {
+  padding: 0 0;
+  margin: 0 0;
+  font-family: 'Cabin Sketch', normal;
+  max-width: 850px;
+  height: auto;
+}
+
+#shop-wrapper #menu .menu-item {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: cornsilk;
+  overflow: auto;
+  white-space: nowrap;
+  outline: none;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-bottom: solid 4px #627295;
+}
+
+#shop-wrapper #menu .menu-item:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  /* Move down */
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  /* Reduce Shadow */
+  border-bottom: none;
+}
+
+#shop-wrapper #menu .menu-item:hover {
+  color: #181616;
+  border-bottom: solid 4px #627295;
+}
+
+#shop-wrapper #menu .menu-item #button-text {
+  margin: 10px 10px;
+  padding: 10px 10px;
+  font-size: 18px;
+}
+
+@media (min-width: 320px) {
+  #shop-wrapper #menu .menu-item #button-text {
+    margin: 2px 2px;
+    padding: 2px 2px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 375px) {
+  #shop-wrapper #menu .menu-item #button-text {
+    margin: 2px 2px;
+    padding: 2px 2px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 425px) {
+  #shop-wrapper #menu .menu-item #button-text {
+    margin: 2px 2px;
+    padding: 2px 2px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  #shop-wrapper #menu .menu-item #button-text {
+    margin: 10px 10px;
+    padding: 10px 10px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #shop-wrapper #menu .menu-item #button-text {
+    margin: 10px 10px;
+    padding: 10px 10px;
+    font-size: 18px;
+  }
+}
+
+#shop-wrapper #menu .menu-item:active, #shop-wrapper #menu .menu-item:focus {
+  outline: none !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+@media (min-width: 320px) {
+  #shop-wrapper #menu .menu-item {
+    width: 253.33px;
+  }
+}
+
+@media (min-width: 375px) {
+  #shop-wrapper #menu .menu-item {
+    width: 253.33px;
+  }
+}
+
+@media (min-width: 425px) {
+  #shop-wrapper #menu .menu-item {
+    width: 253.33px;
+  }
+}
+
+#shop-wrapper #menu #pillows {
+  background: #bd6dff;
+}
+
+#shop-wrapper #menu #cart {
+  background: #2063a1;
+}
+
+#shop-wrapper #menu #search {
+  background: #554bb1;
+}
+
+#shop-wrapper #menu #puffs {
+  background: #52d3bd;
+}
+
+#shop-wrapper #menu #tents {
+  background: #34db50;
+}
+
+#shop-wrapper #menu #baby-ex {
+  background: #98b418;
+}
+
+#shop-wrapper #menu #matts {
+  background: #ff5825;
+}
+
+#shop-wrapper #menu #toy-boxes {
+  background: #d83131;
+}
+/*# sourceMappingURL=shop.component.css.map */

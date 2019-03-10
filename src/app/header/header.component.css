@@ -1,36 +1,234 @@
-.navbar {
-  font-family: 'Patrick Hand', cursive;
+nav.navbar {
+  font-family: 'Cabin Sketch', normal;
   font-size: 1.5rem;
-  text-transform: uppercase;
+  height: 66px;
 }
 
-.navbar .nav-item #introTextContacts {
+nav.navbar .navbar-brand, nav.navbar .navbar-brand:focus {
+  border: 0 !important;
+  outline: none !important;
+}
+
+nav.navbar .navbar-brand:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
+}
+
+nav.navbar .navbar-text a.nav-link {
+  font-size: 18px;
+}
+
+nav.navbar .navbar-text .nav-link #telephone, nav.navbar .navbar-text .nav-link #email, nav.navbar .navbar-text .nav-link #fb, nav.navbar .navbar-text .nav-link #instagram, nav.navbar .navbar-text .nav-link #pinterest {
+  -webkit-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+  font-size: 1rem;
+}
+
+nav.navbar .navbar-text .nav-link #telephone:hover, nav.navbar .navbar-text .nav-link #email:hover, nav.navbar .navbar-text .nav-link #fb:hover, nav.navbar .navbar-text .nav-link #instagram:hover, nav.navbar .navbar-text .nav-link #pinterest:hover {
+  text-decoration: none;
+  color: #31aed4;
+}
+
+nav.navbar .navbar-text #introSocial {
+  cursor: pointer;
+  -webkit-transition: color .2s ease-in;
+  transition: color .2s ease-in;
+  color: #527890;
   position: relative;
 }
 
-.navbar .nav-item #introTextContacts:hover:before {
-  content: attr(data-hover);
-  display: block;
-  border-radius: 5px;
-  background: transparent;
-  position: absolute;
-  top: 100%;
-  left: -7px;
-  right: -7px;
-  padding: 15px;
+@media (min-width: 320px) {
+  nav.navbar .navbar-text #introSocial {
+    top: -3.5vh;
+    margin: 5px 20px;
+  }
 }
 
-.navbar .nav-item #introTextContacts:hover:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  border: solid 10px transparent;
-  border-bottom-color: transparent;
-  bottom: 0;
-  left: 50%;
-  margin-left: -10px;
-  z-index: 2;
+@media (min-width: 360px) {
+  nav.navbar .navbar-text #introSocial {
+    left: 8vw;
+  }
+}
+
+@media (min-width: 375px) {
+  nav.navbar .navbar-text #introSocial {
+    top: -3.5vh;
+    left: 7vw;
+  }
+}
+
+@media (min-width: 425px) {
+  nav.navbar .navbar-text #introSocial {
+    top: -3.5vh;
+    left: 11vw;
+  }
+}
+
+@media (min-width: 768px) {
+  nav.navbar .navbar-text #introSocial {
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  nav.navbar .navbar-text #introSocial {
+    font-size: 1.3rem;
+  }
+}
+
+nav.navbar .navbar-text #introSocial .hidden {
+  display: none;
+}
+
+nav.navbar .navbar-text #introSocial:hover {
+  color: #31aed4 !important;
+}
+
+@media (min-width: 320px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    display: block;
+    position: absolute;
+    top: -7.5vh;
+    left: 21vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
+    font-size: .8rem;
+    margin: 2px 2px;
+    padding: 2px 2px;
+  }
+}
+
+@media (min-width: 360px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    left: 17vw;
+  }
+}
+
+@media (min-width: 375px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    display: block;
+    position: absolute;
+    top: -6.5vh;
+    left: 19vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 425px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    display: block;
+    position: absolute;
+    top: -6.5vh;
+    left: 19vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    display: block;
+    position: absolute;
+    top: 5vh;
+    left: 0vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    display: block;
+    position: absolute;
+    top: 5vh;
+    left: 0vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#telephone, nav.navbar .navbar-text #introSocial:hover .hidden-contacts a#email {
+    font-size: .9rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-contacts {
+    top: 3vh;
+    margin: 10px 10px;
+    padding: 5px 5px;
+  }
+}
+
+@media (min-width: 320px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-social {
+    display: block;
+    position: absolute;
+    top: -5vh;
+    left: -21vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-social a#fb, nav.navbar .navbar-text #introSocial:hover .hidden-social a#instagram, nav.navbar .navbar-text #introSocial:hover .hidden-social a#pinterest {
+    font-size: .8rem;
+    margin: 10px 10px;
+  }
+}
+
+@media (min-width: 375px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-social {
+    display: block;
+    position: absolute;
+    left: -18vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-social a#fb, nav.navbar .navbar-text #introSocial:hover .hidden-social a#instagram, nav.navbar .navbar-text #introSocial:hover .hidden-social a#pinterest {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 425px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-social {
+    display: block;
+    position: absolute;
+    left: -17vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-social a#fb, nav.navbar .navbar-text #introSocial:hover .hidden-social a#instagram, nav.navbar .navbar-text #introSocial:hover .hidden-social a#pinterest {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-social {
+    display: block;
+    position: absolute;
+    top: 5vh;
+    left: 1vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-social a#fb, nav.navbar .navbar-text #introSocial:hover .hidden-social a#instagram, nav.navbar .navbar-text #introSocial:hover .hidden-social a#pinterest {
+    font-size: .8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-social {
+    display: block;
+    position: absolute;
+    top: 5vh;
+    left: 1vw;
+  }
+  nav.navbar .navbar-text #introSocial:hover .hidden-social a#fb, nav.navbar .navbar-text #introSocial:hover .hidden-social a#instagram, nav.navbar .navbar-text #introSocial:hover .hidden-social a#pinterest {
+    font-size: 1rem;
+    margin: 10px 10px;
+  }
+}
+
+@media (min-width: 1440px) {
+  nav.navbar .navbar-text #introSocial:hover .hidden-social {
+    left: 0.5vw;
+    top: 3vh;
+  }
 }
 /*# sourceMappingURL=header.component.css.map */
