@@ -28,7 +28,7 @@ export class CartComponent implements OnInit {
   removeItemFromDb(item: ShopItem) {
     this.store.dispatch(new shopActions.DeleteItemFromCart(item));
     this.notifier.notify('warning',
-      'Item removed');
+      'Item removed!');
   }
 
   showItemDetails(name: string, imageUrl: string) {

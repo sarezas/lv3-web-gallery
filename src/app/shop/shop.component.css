@@ -3,8 +3,11 @@
   margin: 0 0;
   font-family: 'Cabin Sketch', normal;
   max-width: 850px;
-  min-height: 55px;
   height: auto;
+}
+
+#shop-wrapper #menu-cards {
+  min-height: 180px;
 }
 
 #shop-wrapper #menu .menu-item {
