@@ -1,20 +1,61 @@
+$mobile-s: 320px;
+$mobile-m: 375px;
+$mobile-l: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
+
+@mixin mobile-s {
+    @media (min-width: #{$mobile-s}) {
+        @content;
+    }
+}
+
+@mixin mobile-m {
+    @media (min-width: #{$mobile-m}) {
+        @content;
+    }
+}  
+
+@mixin mobile-l {
+    @media (min-width: #{$mobile-l}) {
+        @content;
+    }
+} 
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: #{$laptop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
 @mixin gradient-linear(
     $color1, 
     $color2: $color1,
     $color3: $color1,
     $color4: $color1,
-    $color5: $color1,
-    $color6: $color1,
-    $color7: $color1,
-    $color8: $color1
+    $color5: $color1
 ) {
-    background-color: $color1; /* Old browsers */
-    background-image: -moz-linear-gradient(left, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%, 
-        $color6 62.5%, $color7 75%, $color8 87.5%,  $color1 100%); /* FF3.6-15 */
-    background-image: -webkit-linear-gradient(left, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%,
-        $color6 62.5%, $color7 85.5%, $color8 87.5%,  $color1 100%); /* Chrome10-25,Safari5.1-6 */
-    background-image: linear-gradient(to right, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%,
-        $color6 62.5%, $color7 75%, $color8 87.5%,  $color1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* Old browsers */
+    background-color: $color1;
+    /* FF3.6-15 */
+    background-image: -moz-linear-gradient(left, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%); 
+    /* Chrome10-25,Safari5.1-6 */
+    background-image: -webkit-linear-gradient(left, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-image: linear-gradient(to right, $color1 0%, $color2 12.5%, $color3 25%, $color4 37.5%, $color5 50%);
 }
 
 @keyframes gradientAnim {
@@ -27,12 +68,14 @@
 }
 
 #wrapper-app {
+    width: 100% vw;
+    height: auto;
+
     background-repeat: repeat-y;
     overflow: visible;
     z-index: -1;
 
-    // @include gradient-linear(#f0e6e6, #dac8e4, #d6c5f1, #c3e8ec, #d0eec4, #ffcccc, #f1f1b3, #ecc5c5);
-    @include gradient-linear(#f5f0e6,  #c3e8ec, #d0eec4, #f0f0c6, #f0d2d2);
+    @include gradient-linear(#f3f0eb,  #d7ecee, #e1eedd, #ececd8, #f0dfdf);
 
     background-size: 2000% 400%;
     background-position: 0 0;

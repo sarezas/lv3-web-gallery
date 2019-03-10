@@ -3,33 +3,47 @@ $mobile-s: 320px;
 $mobile-m: 375px;
 $mobile-l: 425px;
 $tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
 
 @mixin mobile-s {
-  @media (min-width: #{mobile-s}) {
-      @content;
-  }
+    @media (min-width: #{$mobile-s}) {
+        @content;
+    }
 }
 
 @mixin mobile-m {
-  @media (min-width: #{mobile-m}) {
-      @content;
-  }
-}
+    @media (min-width: #{$mobile-m}) {
+        @content;
+    }
+}  
 
 @mixin mobile-l {
-  @media (min-width: #{mobile-l}) {
-      @content;
-  }
-}
+    @media (min-width: #{$mobile-l}) {
+        @content;
+    }
+} 
 
 @mixin tablet {
-  @media (min-width: #{tablet}) {
-      @content;
-  }
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (min-width: #{$laptop}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
 }
 
 nav.navbar {
-    font-family: 'Cabin Sketch', cursive;
+    font-family: 'Cabin Sketch', normal;
     font-size: 1.5rem;
     height: 66px;
 
@@ -43,37 +57,9 @@ nav.navbar {
       transition: .3s ease-in;
     }
 
-    #navbarText {
-      margin-top: -12vh;
-      margin-left: 14vw;
-      justify-content: center;
-
-      @include mobile-s {
-        margin-top: 20px !important;
-        margin-left: 35px;
-      }
-
-      a#telephone {
-        margin-top: 0;
-        margin-bottom: 2.5vh;
-      }
-      
-      @include mobile-l {
-        background-color: red;
-        margin-top: 20px;
-        margin-left: 55px;
-      }
-    }
-    
     .navbar-text {
       a.nav-link {
-        font-size: 6.8vw;
-      }
-
-      #introSocial {
-        .hidden {
-          display: none;
-        }
+        font-size: 18px;
       }
 
       .nav-link {
@@ -88,49 +74,144 @@ nav.navbar {
       }
 
       #introSocial {
+        cursor: pointer;
         transition: color .2s ease-in;
         color: rgb(82, 120, 144);
         position: relative;
 
+        @include mobile-s {
+          top: -5vh;
+          margin: 0 25px;
+        }
+        @include mobile-m {
+          top: -5vh;
+          left: 7vw;
+        }
+        @include mobile-l {
+          top: -5vh;
+          left: 11vw;
+        }
+        @include tablet {
+          // background-color: coral;
+          top: 0;
+          left: 0;
+          right: 0;
+          padding: 0;
+        }
+
+        .hidden {
+          display: none;
+        }
+
         &:hover {
           color: $btn-color !important;
             .hidden-contacts {
-              position: absolute;
-              display: flex;
-              flex-direction: row;
-              left: -6vh;
-              top: 9vh;
-              margin-left: 10vw;
-              z-index: 2;
-              font-size: 1rem;
-
-              a#telephone, a#email {
-                margin-right: 4vw;
-                padding: 1vw;
-                font-size: .8rem;
+              @include mobile-s {
+                display: block;
+                position: absolute;
+                top: -9vh;
+                left: 19vw;
+    
+                a#telephone, a#email {
+                  font-size: .8rem;
+                }
               }
-
-              a#email {
-                margin-left: 4vw;
-                padding: 1vw;
-                font-size: .8rem;
+              @include mobile-m {
+                display: block;
+                position: absolute;
+                top: -9vh;
+                left: 19vw;
+    
+                a#telephone, a#email {
+                  font-size: .8rem;
+                }
               }
-            }  
-
-            .hidden-social {
-              position: absolute;
-              display: flex;
-              flex-direction: row;
-              left: 7px;
-              margin-left: 10vw;
-              z-index: 2;
-              font-size: 1rem;
-
-              a#fb, a#instagram, a#pinterest {
-                margin: 2vw;
-                font-size: 1rem;
+              @include mobile-l {
+                display: block;
+                position: absolute;
+                top: -9vh;
+                left: 19vw;
+    
+                a#telephone, a#email {
+                  font-size: .8rem;
+                }
+              }
+              @include tablet {
+                display: block;
+                position: absolute;
+                top: 5vh;
+                left: 0vw;
+    
+                a#telephone, a#email {
+                  font-size: .8rem;
+                }
+              }
+              @include laptop {
+                display: block;
+                position: absolute;
+                top: 5vh;
+                left: 0vw;
+    
+                a#telephone, a#email {
+                  font-size: .8rem;
+                }
               }
             }
+
+            .hidden-social {
+              @include mobile-s {
+                display: block;
+                position: absolute;
+                top: -7vh;
+                left: -26vw;
+    
+                a#fb, a#instagram, a#pinterest {
+                  font-size: .8rem;
+                  margin: 20px 10px;
+                }
+              }
+              @include mobile-m {
+                display: block;
+                position: absolute;
+                left: -20vw;
+
+                a#fb, a#instagram, a#pinterest {
+                  font-size: .8rem;
+                }
+              }
+              @include mobile-l {
+                display: block;
+                position: absolute;
+                left: -17vw;
+
+                a#fb, a#instagram, a#pinterest {
+                  font-size: .8rem;
+                }
+              }
+              @include tablet {
+                display: block;
+                position: absolute;
+                top: 5vh;
+                left: 1vw;
+    
+                a#fb, a#instagram, a#pinterest {
+                  font-size: .8rem;
+                }
+              }
+              @include laptop {
+                display: block;
+                position: absolute;
+                top: 5vh;
+                left: 1vw;
+    
+                a#fb, a#instagram, a#pinterest {
+                  font-size: .8rem;
+                }
+              }
+              @include desktop {
+                left: 0.5vw;
+            }
+          }
         }
       }
     }

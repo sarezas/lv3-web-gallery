@@ -30,6 +30,48 @@ import { ShopEffects } from './effects/shop.effects';
 import { FilterPipe } from './shop/filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarDirective } from './header/navbar.directive';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
+
+const notifierDefaultOptions: NotifierOptions = {
+  position: {
+    horizontal: {
+      position: 'left',
+      distance: 12
+    },
+    vertical: {
+      position: 'bottom',
+      distance: 12,
+      gap: 10
+    }
+  },
+  theme: 'material',
+  behaviour: {
+    autoHide: 3000,
+    onClick: false,
+    onMouseover: 'pauseAutoHide',
+    showDismissButton: true,
+    stacking: 4
+  },
+  animations: {
+    enabled: true,
+    show: {
+      preset: 'slide',
+      speed: 300,
+      easing: 'ease'
+    },
+    hide: {
+      preset: 'fade',
+      speed: 300,
+      easing: 'ease',
+      offset: 50
+    },
+    shift: {
+      speed: 300,
+      easing: 'ease'
+    },
+    overlap: 150
+  }
+};
 
 @NgModule({
   declarations: [
@@ -59,7 +101,8 @@ import { NavbarDirective } from './header/navbar.directive';
     EffectsModule.forRoot([ShopEffects]),
     StoreModule.forRoot({shop: ShopReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NotifierModule.withConfig(notifierDefaultOptions)
   ],
   providers: [
     DatabaseService,

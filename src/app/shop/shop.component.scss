@@ -42,11 +42,15 @@ $desktop: 1440px;
 }
 
 #shop-wrapper {
-    font-family: 'Cabin Sketch', cursive;
+    padding: 0 0;
+    margin: 0 0;
+    font-family: 'Cabin Sketch', normal;
     max-width: 850px;
     height: auto;
 
     #menu {
+
+    	// box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
 
         .menu-item {
             display: flex;
@@ -86,11 +90,20 @@ $desktop: 1440px;
             }
 
             #search-bar {
-                // @include mobile-s {}
-
                 #search-button {
                     color: black;
                     border: 1px solid rgb(206, 205, 205) !important;
+                }
+            }
+
+            #button-text {
+                border: none;
+                font-size: 18px;
+                justify-items: center;
+                align-items: center;
+
+                @include tablet {
+                    font-size: 16px;
                 }
             }
         }
@@ -123,7 +136,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #pillows:focus {
+        #pillows:focus, *:active, *:hover {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -142,7 +155,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #cart:focus {
+        #cart:focus, *:active, *:hover {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -161,7 +174,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #search:focus {
+        #search:focus, *:active, *:hover {
             content: attr(data-hover);
             background-position: 0 0;
             color: black;
@@ -181,7 +194,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #puffs:focus {
+        #puffs:focus, *:active, *:hover {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -200,14 +213,14 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #tents:focus {
+        #tents:focus, *:active, *:hover {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
         }
 
         #baby-ex {
-            background: rgb(240, 237, 68);
+            background: rgb(247, 243, 16);
             color:white;
             background-image: linear-gradient(to left,
                 transparent,
@@ -219,7 +232,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #baby-ex:focus {
+        #baby-ex:focus, *:active, *:hover {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -238,7 +251,7 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #matts:focus {
+        #matts:focus, *:active, *:hover {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
@@ -257,11 +270,15 @@ $desktop: 1440px;
                 transition: all .25s ease-in;
                 
             }
-        #toy-boxes:focus {
+        #toy-boxes:focus, *:active, *:hover {
             background-position: 0 0;
             color: black;
             border: 2px solid black;
         }
 
     }
+
+    // #menu-cards {
+    //     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    // }
 }

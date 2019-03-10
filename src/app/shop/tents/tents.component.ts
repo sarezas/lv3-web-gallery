@@ -4,6 +4,7 @@ import { ShopState } from 'src/app/shared/shop.state';
 import * as shopActions from '../../store/shop.actions';
 
 import { ShopItem } from 'src/app/shared/shop-item.model';
+import { NotifierService } from 'angular-notifier';
 
 export const tents: ShopItem[] = [
   new ShopItem('Creme Tent', 'A spacious, creme-colored fort for kids',
@@ -26,15 +27,22 @@ export const tents: ShopItem[] = [
   styleUrls: ['./tents.component.scss']
 })
 export class TentsComponent implements OnInit {
+  private readonly notifier: NotifierService;
+  // notificationShow: true;
   tents: ShopItem[] = [...tents];
   selectedName: string;
   selectedUrl: string;
-  constructor(private store: Store<ShopState>) { }
+  constructor(private store: Store<ShopState>, private notifierService: NotifierService) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {}
 
   addToCart(item: ShopItem) {
     this.store.dispatch(new shopActions.LoadItemToCart(item));
+    this.notifier.notify('success',
+      'Thanks for putting items into the storage, each week our team will try to synchronize our factory stock with it!');
+    // this.notificationShow = false;
   }
 
   showItemDetails(name: string, imageUrl: string) {

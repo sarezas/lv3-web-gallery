@@ -1,25 +1,19 @@
-// // .col-3 {
-// //     flex-direction: column;
-// //     justify-content: center;
-// //     white-space: nowrap;
-// // }
-
 ul.list-group  {
     list-style: none;
 
     .list-item {
-        font-size: 0.8rem;
+        font-size: .8rem;
     }
 }
 
-// // #footnote-wrapper {
-// //     // background-color: hsla(129, 53%, 90%, 0.4) !important;
-// // }
-
 #footnote {
-    font-size: .6rem;
+    font-size: .8rem;
 }
 
+#footer-topic {
+    font-family: "Cabin Sketch", normal;
+    font-size: 18px;
+}
 #dev-signature {
     display: flex;
     justify-content: flex-start;
