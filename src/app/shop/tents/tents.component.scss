@@ -86,8 +86,9 @@ button.no-focus-outline {
     word-wrap: break-word;
     color: #fff;
 }
-.btn-card:active {
-    background: rgb(136, 240, 226);
+.btn-card:hover {
+    background: rgb(162, 250, 237);
+    color: #0a0a0a;
 }
 a.btn-card {
     text-decoration: none;

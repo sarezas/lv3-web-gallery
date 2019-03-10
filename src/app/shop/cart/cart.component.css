@@ -71,7 +71,7 @@ button.no-focus-outline {
 }
 
 .btn-card {
-  background-color: #f7973d;
+  background-color: #fa9f4a;
   color: #fff;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -92,7 +92,8 @@ button.no-focus-outline {
 }
 
 .btn-card:hover {
-  background: #88f0e2;
+  background: #f7b67a;
+  color: #0a0a0a;
 }
 
 a.btn-card {

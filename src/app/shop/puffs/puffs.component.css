@@ -92,7 +92,8 @@ button.no-focus-outline {
 }
 
 .btn-card:hover {
-  background: #88f0e2;
+  background: #a2faed;
+  color: #0a0a0a;
 }
 
 a.btn-card {
